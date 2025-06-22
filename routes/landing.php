@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['web.tracking', 'web.locale'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('/page/{slug}', [HomeController::class, 'page'])->name('home.page');
+    Route::get('/view', [AboutController::class, 'view'])->name('home.view');
 
     // About routes
     Route::get('/about', [AboutController::class, 'index'])->name('home.about');

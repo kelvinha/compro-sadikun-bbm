@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="services-box-content">
                                     <h4 class="h4-title">
-                                        <a href="" title="All Maintenance">{{ $product->title }}</a>
+                                        <a href="{{ route('home.view') }}"  target="_blank" title="All Maintenance">{{ $product->title }}</a>
                                     </h4>
                                     {!! $product->short_description !!}
                                 </div>
