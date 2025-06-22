@@ -114,7 +114,7 @@ class ProductController extends Controller
             $category = ProductCategory::find($product->category_id);
         }
 
-        return view('landing.product-details', compact('product', 'relatedProducts', 'productsPage', 'category'));
+        return view('landing.product-detail', compact('product', 'relatedProducts', 'productsPage', 'category'));
     }
 
     /**
@@ -164,5 +164,15 @@ class ProductController extends Controller
         $sort = 'default';
 
         return view('landing.product', compact('productsPage', 'products', 'featuredProducts', 'categories', 'category', 'sort'));
+    }
+
+    public function file($slug)
+    {
+        $product = Product::where('slug', $slug)
+            ->where('status', 'active')
+            ->firstOrFail();
+        // TODO: change to be product_catalog
+        //   return response()->file(public_path('storage/'. $product->product_catalog), ['Content-Type' => 'application/pdf']);
+        return response()->file(public_path('storage/sample.pdf'), ['Content-Type' => 'application/pdf']);
     }
 }

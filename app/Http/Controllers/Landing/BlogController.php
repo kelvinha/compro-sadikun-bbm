@@ -109,7 +109,7 @@ class BlogController extends Controller
             $query->where('status', 'published');
         }])->having('blogs_count', '>', 0)->get();
 
-        return view('landing.blog-post', compact('blog', 'relatedBlogs', 'blogPage','categories','currentBlogs'));
+        return view('landing.blog-detail', compact('blog', 'relatedBlogs', 'blogPage','categories','currentBlogs'));
     }
 
     /**

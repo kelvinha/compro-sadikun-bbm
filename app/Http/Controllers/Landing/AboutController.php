@@ -46,9 +46,4 @@ class AboutController extends Controller
 
         return view('landing.about', compact('aboutPage', 'testimonials','currentBlogs'));
     }
-
-    public function view()
-    {
-        return response()->file(public_path('storage/sample.pdf'), ['Content-Type' => 'application/pdf']);
-    }
 }

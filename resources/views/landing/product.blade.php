@@ -1,4 +1,9 @@
 @extends('landing.layout.master')
+
+@section('title', $productsPage->seo->title ?? 'Our Products')
+@section('meta_description', $productsPage->seo->description ?? 'Explore our range of high-quality products')
+@section('meta_keywords', $productsPage->seo->keywords ?? 'products, valve automation, control systems')
+
 @section('classBody', 'services_listing_page')
 @section('content')
     <main class="site-main">
@@ -53,7 +58,7 @@
                                 </div>
                                 <div class="services-box-content">
                                     <h4 class="h4-title">
-                                        <a href="{{ route('home.view') }}"  target="_blank" title="All Maintenance">{{ $product->title }}</a>
+                                        <a href="{{ route('home.products.show', $product->slug) }}"  target="_blank" title="All Maintenance">{{ $product->title }}</a>
                                     </h4>
                                     {!! $product->short_description !!}
                                 </div>
