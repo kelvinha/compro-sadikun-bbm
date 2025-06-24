@@ -65,6 +65,24 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="category">Category</label>
+                                    <select class="form-control @error('category') is-invalid @enderror" id="category"
+                                        name="category">
+                                        <option value="">Select Category</option>
+                                        @foreach($categories as $key => $value)
+                                        <option value="{{ $key }}" {{ old('category')==$key ? 'selected' : '' }}>{{
+                                            $value }}</option>
+                                        @endforeach
+                                    </select>
+                                    <small class="form-text text-muted">Organize media by page section.</small>
+                                    @error('category')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
                         <div class="mt-3">

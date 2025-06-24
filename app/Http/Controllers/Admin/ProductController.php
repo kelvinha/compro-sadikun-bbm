@@ -30,6 +30,7 @@ class ProductController extends Controller
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'gallery.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_catalog' => 'nullable|file|mimes:pdf|max:10240', // 10MB max for PDF
             'short_description' => 'nullable|string|max:500',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
@@ -57,6 +58,11 @@ class ProductController extends Controller
                 $gallery[] = $galleryPath;
             }
             $validated['gallery'] = $gallery;
+        }
+
+        if ($request->hasFile('product_catalog')) {
+            $catalogPath = $request->file('product_catalog')->store('product-catalogs', 'public');
+            $validated['product_catalog'] = $catalogPath;
         }
 
         $product = Product::create($validated);
@@ -93,6 +99,7 @@ class ProductController extends Controller
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'gallery.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_catalog' => 'nullable|file|mimes:pdf|max:10240', // 10MB max for PDF
             'short_description' => 'nullable|string|max:500',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
@@ -127,6 +134,16 @@ class ProductController extends Controller
             }
 
             $validated['gallery'] = $gallery;
+        }
+
+        if ($request->hasFile('product_catalog')) {
+            // Delete old catalog if exists
+            if ($product->product_catalog) {
+                Storage::disk('public')->delete($product->product_catalog);
+            }
+
+            $catalogPath = $request->file('product_catalog')->store('product-catalogs', 'public');
+            $validated['product_catalog'] = $catalogPath;
         }
 
         // Handle gallery deletions
@@ -175,6 +192,11 @@ class ProductController extends Controller
             foreach ($product->gallery as $galleryImage) {
                 Storage::disk('public')->delete($galleryImage);
             }
+        }
+
+        // Delete catalog file if exists
+        if ($product->product_catalog) {
+            Storage::disk('public')->delete($product->product_catalog);
         }
 
         // Delete SEO settings

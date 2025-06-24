@@ -43,6 +43,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="product_catalog">Product Catalog (PDF)</label>
+                            <input type="file" name="product_catalog" id="product_catalog"
+                                class="form-control-file @error('product_catalog') is-invalid @enderror" accept=".pdf">
+                            <small class="form-text text-muted">Upload a PDF catalog file (max 10MB)</small>
+                            @error('product_catalog')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label for="short_description">Short Description</label>
                             <textarea name="short_description" id="short_description"
                                 class="form-control ckeditor @error('short_description') is-invalid @enderror">{{ old('short_description') }}</textarea>

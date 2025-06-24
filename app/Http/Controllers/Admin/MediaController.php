@@ -15,11 +15,20 @@ class MediaController extends BaseController
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $media = Media::orderBy('created_at', 'desc')->get();
+        $query = Media::query();
 
-        return view('admin.media.index', compact('media'));
+        // Filter by category if provided
+        if ($request->filled('category')) {
+            $query->where('category', $request->category);
+        }
+
+        $media = $query->orderBy('created_at', 'desc')->get();
+        $categories = Media::getCategories();
+        $selectedCategory = $request->category;
+
+        return view('admin.media.index', compact('media', 'categories', 'selectedCategory'));
     }
 
     /**
@@ -29,7 +38,8 @@ class MediaController extends BaseController
      */
     public function create()
     {
-        return view('admin.media.create');
+        $categories = Media::getCategories();
+        return view('admin.media.create', compact('categories'));
     }
 
     /**
@@ -45,6 +55,7 @@ class MediaController extends BaseController
             'name' => 'nullable|string|max:255',
             'alt_text' => 'nullable|string|max:255',
             'caption' => 'nullable|string',
+            'category' => 'nullable|string|in:' . implode(',', array_keys(Media::getCategories())),
         ]);
 
         $file = $request->file('file');
@@ -72,6 +83,7 @@ class MediaController extends BaseController
         $media->size = $size;
         $media->alt_text = $request->alt_text;
         $media->caption = $request->caption;
+        $media->category = $request->category;
         $media->save();
 
         $this->success('Media uploaded successfully');
@@ -98,7 +110,8 @@ class MediaController extends BaseController
      */
     public function edit(Media $media)
     {
-        return view('admin.media.edit', compact('media'));
+        $categories = Media::getCategories();
+        return view('admin.media.edit', compact('media', 'categories'));
     }
 
     /**
@@ -114,11 +127,13 @@ class MediaController extends BaseController
             'name' => 'required|string|max:255',
             'alt_text' => 'nullable|string|max:255',
             'caption' => 'nullable|string',
+            'category' => 'nullable|string|in:' . implode(',', array_keys(Media::getCategories())),
         ]);
 
         $media->name = $request->name;
         $media->alt_text = $request->alt_text;
         $media->caption = $request->caption;
+        $media->category = $request->category;
         $media->save();
 
         $this->success('Media updated successfully');

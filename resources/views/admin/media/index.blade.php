@@ -16,6 +16,31 @@
                 <div class="card-body">
                     <p>Manage your media files here.</p>
 
+                    <!-- Category Filter -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <form method="GET" action="{{ route('admin.media.index') }}">
+                                <div class="form-group">
+                                    <label for="category">Filter by Category:</label>
+                                    <select name="category" id="category" class="form-control"
+                                        onchange="this.form.submit()">
+                                        <option value="">All Categories</option>
+                                        @foreach($categories as $key => $value)
+                                        <option value="{{ $key }}" {{ $selectedCategory==$key ? 'selected' : '' }}>{{
+                                            $value }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        @if($selectedCategory)
+                        <div class="col-md-9 d-flex align-items-end">
+                            <a href="{{ route('admin.media.index') }}" class="btn btn-outline-secondary">Clear
+                                Filter</a>
+                        </div>
+                        @endif
+                    </div>
+
                     <div class="row">
                         @forelse($media as $item)
                         <div class="col-md-2 col-sm-4 mb-4">
@@ -43,7 +68,11 @@
 
                                     <h6 class="card-title mb-1" title="{{ $item->name }}">
                                         {{ Str::limit($item->name, 15) }}</h6>
-                                    <p class="card-text small text-muted mb-2">{{ $item->human_size }}</p>
+                                    <p class="card-text small text-muted mb-1">{{ $item->human_size }}</p>
+                                    @if($item->category)
+                                    <span class="badge bg-secondary mb-2">{{
+                                        \App\Models\Media::getCategories()[$item->category] ?? $item->category }}</span>
+                                    @endif
 
                                     <div class="action-buttons d-flex gap-2">
                                         <a href="{{ route('admin.media.show', $item) }}" class="btn btn-info btn-sm"

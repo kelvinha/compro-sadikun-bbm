@@ -128,6 +128,22 @@
                                         </div>
 
                                         <div class="form-group mb-4">
+                                            <label for="category" class="form-label fw-bold">Category</label>
+                                            <select class="form-control @error('category') is-invalid @enderror"
+                                                id="category" name="category">
+                                                <option value="">Select Category</option>
+                                                @foreach($categories as $key => $value)
+                                                <option value="{{ $key }}" {{ old('category', $media->category) == $key
+                                                    ? 'selected' : '' }}>{{ $value }}</option>
+                                                @endforeach
+                                            </select>
+                                            <div class="form-text text-muted">Organize media by page section.</div>
+                                            @error('category')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group mb-4">
                                             <label class="form-label fw-bold">File URL</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control bg-light"

@@ -73,6 +73,29 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="product_catalog">Product Catalog (PDF)</label>
+                            @if ($product->product_catalog)
+                            <div class="mb-2">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-file-pdf"></i> Current catalog:
+                                    <a href="{{ asset('storage/' . $product->product_catalog) }}" target="_blank"
+                                        class="alert-link">
+                                        {{ basename($product->product_catalog) }}
+                                    </a>
+                                    <small class="text-muted">(Click to view)</small>
+                                </div>
+                            </div>
+                            @endif
+                            <input type="file" name="product_catalog" id="product_catalog"
+                                class="form-control-file @error('product_catalog') is-invalid @enderror" accept=".pdf">
+                            <small class="form-text text-muted">Upload a new PDF catalog file to replace the current one
+                                (max 10MB)</small>
+                            @error('product_catalog')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label for="short_description">Short Description</label>
                             <textarea name="short_description" id="short_description"
                                 class="form-control ckeditor @error('short_description') is-invalid @enderror">{{ old('short_description', $product->short_description) }}</textarea>

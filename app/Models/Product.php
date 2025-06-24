@@ -16,6 +16,7 @@ class Product extends Model
         'slug',
         'image',
         'gallery',
+        'product_catalog',
         'short_description',
         'description',
         'price',
@@ -55,6 +56,26 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(ProductCategory::class, 'category_id');
+    }
+
+    /**
+     * Get the full URL to the product catalog file.
+     *
+     * @return string|null
+     */
+    public function getCatalogUrlAttribute()
+    {
+        return $this->product_catalog ? asset('storage/' . $this->product_catalog) : null;
+    }
+
+    /**
+     * Check if the product has a catalog file.
+     *
+     * @return bool
+     */
+    public function hasCatalog()
+    {
+        return !empty($this->product_catalog);
     }
 
     /**

@@ -20,7 +20,31 @@ class Media extends Model
         'size',
         'alt_text',
         'caption',
+        'category',
     ];
+
+    /**
+     * Available media categories
+     */
+    const CATEGORIES = [
+        'home' => 'Home',
+        'about' => 'About',
+        'contact' => 'Contact',
+        'services' => 'Services',
+        'projects' => 'Projects',
+        'blog' => 'Blog',
+        'general' => 'General',
+    ];
+
+    /**
+     * Get available categories for dropdown
+     *
+     * @return array
+     */
+    public static function getCategories()
+    {
+        return self::CATEGORIES;
+    }
 
     /**
      * Get the user that owns the media.

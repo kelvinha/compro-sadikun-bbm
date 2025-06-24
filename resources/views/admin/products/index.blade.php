@@ -27,6 +27,7 @@
                                     <th>Price</th>
                                     <th>Sale Price</th>
                                     <th>Stock</th>
+                                    <th>Catalog</th>
                                     <th>Status</th>
                                     <th>Featured</th>
                                     <th>Order</th>
@@ -50,6 +51,16 @@
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->sale_price }}</td>
                                     <td>{{ $product->stock }}</td>
+                                    <td>
+                                        @if ($product->product_catalog)
+                                        <a href="{{ asset('storage/' . $product->product_catalog) }}" target="_blank"
+                                            class="btn btn-sm btn-outline-primary">
+                                            <i class="fas fa-file-pdf"></i> View PDF
+                                        </a>
+                                        @else
+                                        <span class="badge bg-secondary">No Catalog</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         @if ($product->status == 'active')
                                         <span class="badge bg-success">Active</span>
@@ -83,7 +94,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="11" class="text-center">No products found.</td>
+                                    <td colspan="12" class="text-center">No products found.</td>
                                 </tr>
                                 @endforelse
                             </tbody>
