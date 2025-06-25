@@ -7,7 +7,9 @@ use App\Helpers\PageHelper;
 use App\Helpers\ProductHelper;
 use App\Helpers\ProjectHelper;
 use App\Helpers\SettingsHelper;
+use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\Client;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Testimonial;
@@ -43,7 +45,18 @@ class HomeController extends Controller
             ->take(10)
             ->get();
 
-        return view('landing.index', compact('featuredBlogs', 'featuredProjects', 'featuredProducts','testimonials'));
+        // Get Banners
+        $banners = Banner::where('active', '1')
+            ->orderBy('order', 'asc')
+            ->take(3)
+            ->get();
+
+        // Get Clients
+        $clients = Client::where('active', '1')
+            ->orderBy('order', 'asc')
+            ->get();
+
+        return view('landing.index', compact('featuredBlogs', 'featuredProjects', 'featuredProducts','testimonials','banners','clients'));
     }
 
     /**

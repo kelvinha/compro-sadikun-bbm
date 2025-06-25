@@ -57,12 +57,6 @@
                             </a>
                             <p>Empowering Indonesia with reliable, innovative, and heartfelt energy solutions</p>
                         </div>
-                        <div class="mail-form">
-                            <form>
-                                <input type="email" placeholder="Email Address" required="">
-                                <button type="submit" class="sec-btn icon-lg"></button>
-                            </form>
-                        </div>
                         <div class="footer-socials">
                             <ul>
                                 <li>

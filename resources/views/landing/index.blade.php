@@ -30,42 +30,54 @@
             </div>
             <div class="swiper main-banner-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide main-banner-slide">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="banner-content white-text">
-                                        <h1 class="h1-title">
-                                            We Are Your Energy
-                                            <span>
-                                                Partner
+                    @foreach($banners as $banner)
+                        <div class="swiper-slide main-banner-slide">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="banner-content white-text">
+                                            <h1 class="h1-title">
+                                                @php
+                                                    $words = array_filter(explode(" ", trim($banner->title )));
+                                                    $lastWord = end($words);
+
+                                                    array_pop($words);
+                                                    $remainingSentence = implode(" ", $words);
+                                                @endphp
+                                                {{ $remainingSentence  }}
+                                                <span>
+                                                {{ $lastWord }}
                                                 <img src="{{asset('vendor/landing')}}/assets/images/title-line.svg"
                                                      width="342" height="13" alt="Title line">
                                             </span>
-                                        </h1>
-                                        <p class="text-lg">Bersama dengan Anda, kami bertekad untuk menjadi mitra energi
-                                            pilihan utama di Indonesia dengan memberikan layanan yang handal, inovatif,
-                                            serta berorientasi pada dedikasi untuk melayani dengan ketulusan dan
-                                            profesional.</p>
-                                        <div class="banner-btn">
-                                            <a href="{{ route('home.products') }}" class="sec-btn"
-                                               title="Discover More">Discover
-                                                More</a>
+                                            </h1>
+                                            <p class="text-lg">{{ $banner->description }}</p>
+                                            <div class="banner-btn">
+                                                <a href="{{ route('home.products') }}" class="sec-btn"
+                                                   title="Discover More">Discover
+                                                    More</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="banner-image-path-main">
-                                        <div class="banner-image-path-sub">
-                                            <div class="banner-image back-img"
-                                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/hero.jpg');">
+                                    <div class="col-lg-6">
+                                        <div class="banner-image-path-main">
+                                            <div class="banner-image-path-sub">
+                                                @if($banner->image)
+                                                    <div class="banner-image back-img"
+                                                         style="background-image: url('{{asset('storage/' . $banner->image)}}');">
+                                                    </div>
+                                                @else
+                                                    <div class="banner-image back-img"
+                                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/explore-work-3-min.jpg');">
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -96,7 +108,9 @@
                                     ABOUT US
                                 </span>
                                 <h2 class="h2-title">Kami Hadirkan Solusi Energi Terpadu untuk Industri</h2>
-                                <p>Kami menyediakan layanan distribusi BBM industri yang efisien, aman, dan terpercaya. Dengan dukungan armada modern dan jaringan nasional, kami siap menjadi mitra energi terbaik bagi bisnis Anda.</p>
+                                <p>Kami menyediakan layanan distribusi BBM industri yang efisien, aman, dan terpercaya.
+                                    Dengan dukungan armada modern dan jaringan nasional, kami siap menjadi mitra energi
+                                    terbaik bagi bisnis Anda.</p>
                             </div>
                             <div class="engineer-list">
                                 <div class="engineer-list-item">
@@ -267,7 +281,8 @@
                 <div class="col-lg-12 mb-5">
                     <div class="sec-title">
                     <span class="sub-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <img src="{{asset('vendor/landing')}}/assets/images/certified-engineer.svg" width="18" height="18"
+                        <img src="{{asset('vendor/landing')}}/assets/images/certified-engineer.svg" width="18"
+                             height="18"
                              alt="Setting Icon">OUR JOURNEY
                     </span>
                         <h2 class="h2-title m-0 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">Milestones
@@ -386,7 +401,8 @@
                                         <span class="icon"></span>
                                     </div>
                                     <div class="faq-accordian-content">
-                                        <p>Kami menawarkan berbagai jenis produk BBM <a href="{{ route('home.products') }}">lihat disini</a></p>
+                                        <p>Kami menawarkan berbagai jenis produk BBM <a
+                                                href="{{ route('home.products') }}">lihat disini</a></p>
                                     </div>
                                 </div>
                                 <div class="faq-accordian-box">
@@ -495,6 +511,32 @@
         </section>
         <!-- END OF FAQ SECTION -->
         <!-- START OF TESTIMONIALS SECTION -->
+        <section class="global-clients light-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 order-lg-1 order-2 align-self-center">
+                        <div class="global-clients-list wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">
+                            @foreach($clients as $client)
+                                @if($client->logo)
+                                    <img src="{{ asset('storage/' . $client->logo) }}" width="130" height="34" alt="Boltshift Icon">
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-lg-5 order-lg-2 order-1">
+                        <div class="global-clients-content wow fadeInRight" data-wow-duration=".8s" data-wow-delay=".2s">
+                            <div class="sec-title">
+                                <span class="sub-title">
+                                    <img src="{{ asset('vendor/landing') }}/assets/images/setting-icon.svg" width="18" height="18" alt="Setting Icon">
+                                    TRUSTED BY
+                                </span>
+                                <h2 class="h2-title">Our {{ $clients->count() }} Clients</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="testimonials">
             <img src="{{asset('vendor/landing')}}/assets/images/globe.svg" class="bg-glob" width="687" height="744"
                  alt="Globe Icon">

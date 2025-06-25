@@ -29,6 +29,7 @@ Route::middleware(['web.tracking', 'web.locale'])->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('home.products');
     Route::get('/products/category/{slug}', [ProductController::class, 'category'])->name('home.products.category');
     Route::get('/products/{slug}', [ProductController::class, 'show'])->name('home.products.show');
+    Route::get('/products/file/{slug}', [ProductController::class, 'file'])->name('home.products.file');
 
     // Contact routes
     Route::get('/contact', [ContactController::class, 'index'])->name('home.contact');
