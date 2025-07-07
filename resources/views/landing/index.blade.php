@@ -89,14 +89,14 @@
                     <div class="col-lg-6">
                         <div class="about-images wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">
                             <div class="about-top-image back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about-us-1.jpg');">
+                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about_us_intro.jpg');">
                                 <span class="logo-icon">
                                     <img src="{{asset('vendor/landing')}}/assets/images/logo-icon.svg" width="48"
                                          height="48" alt="Logo Icon">
                                 </span>
                             </div>
                             <div class="about-bottom-image back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about-us-2.jpg');"></div>
+                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about_us_intro_2.jpg');"></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -120,8 +120,7 @@
                                     </span>
                                     <div class="engineer-list-content">
                                         <h4 class="h4-title">Distributor Resmi Pertamina</h4>
-                                        <p>PT Sadikun BBM merupakan distributor resmi Pertamina sejak 31 Mei 2012 dan
-                                            bagian dari Sadikun Niagamas Raya.</p>
+                                        <p>PT Sadikun BBM merupakan distributor resmi Pertamina sejak 31 Mei 2012</p>
                                     </div>
                                 </div>
                                 <div class="engineer-list-item">
@@ -143,7 +142,7 @@
         </section>
         <div class="col-lg-12">
             <div class="company-timeline wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                <span class="timeline-text">2012</span>
+                <span class="timeline-text">Since</span>
                 <div class="company-experiance">
                     <img src="{{ asset('vendor/landing') }}/assets/images/plus-icon.svg" width="20" height="20"
                          alt="Plus Icon">
@@ -163,7 +162,7 @@
                         </svg>
                     </div>
                 </div>
-                <span class="timeline-text">Since</span>
+                <span class="timeline-text">2012</span>
             </div>
         </div>
         <!-- END OF JOINING SECTION -->
@@ -175,11 +174,6 @@
                         <div id="counter" class="skills-content wow fadeInRight" data-wow-duration=".8s"
                              data-wow-delay=".2s">
                             <div class="sec-title">
-                                <span class="sub-title">
-                                    <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"
-                                         height="18" alt="Setting Icon">
-                                    PROCESS & SKILLS
-                                </span>
                                 <h2 class="h2-title">Mengapa Memilih Sadikun BBM</h2>
                                 <p>Kami hadir sebagai solusi energi terpadu dengan dedikasi terhadap layanan terbaik,
                                     distribusi terpercaya, dan dukungan pertumbuhan industri berkelanjutan.</p>
@@ -219,7 +213,7 @@
                                 <div class="skills-count worker-team">
                                     <div class="counting-wp">
                                         <div class="h3-title">
-                                            <strong class="counting" data-count="1000">0</strong>
+                                            <strong class="counting" data-count="2000">0</strong>
                                             <span>+</span>
                                         </div>
                                         <span>Worker Team</span>
@@ -228,7 +222,7 @@
                                 <div class="skills-count satisfied-clients">
                                     <div class="counting-wp">
                                         <div class="h3-title">
-                                            <strong class="counting" data-count="10">0</strong>
+                                            <strong class="counting" data-count="1000">0</strong>
                                             <span>+</span>
                                         </div>
                                         <span>Satisfied Clients</span>
@@ -254,7 +248,7 @@
                                     <p class="h4-title">2</p>
                                 </div>
                                 <div class="process-content">
-                                    <h4 class="h4-title">Bangun Jaringan Distribusin</h4>
+                                    <h4 class="h4-title">Bangun Jaringan Distribusi</h4>
                                     <p>Didukung jaringan nasional dan pengalaman lebih dari 10 tahun, kami menjangkau
                                         berbagai sektor industri secara andal.</p>
                                 </div>
@@ -265,7 +259,7 @@
                                 </div>
                                 <div class="process-content">
                                     <h4 class="h4-title">Kirim Energi Tepat Waktu</h4>
-                                    <p>Dengan integritas dan kehandalan, kami pastikan energi sampai dengan aman dan
+                                    <p>Dengan integritas dan keandalan, kami pastikan energi sampai dengan aman dan
                                         tepat waktu ke seluruh Indonesia.</p>
                                 </div>
                             </div>
@@ -417,15 +411,6 @@
                                 </div>
                                 <div class="faq-accordian-box">
                                     <div class="faq-accordian-title">
-                                        <h6 class="h6-title">Apakah Sadikun BBM melayani pengiriman luar kota?</h6>
-                                        <span class="icon"></span>
-                                    </div>
-                                    <div class="faq-accordian-content">
-                                        <p> Kami melayani pengiriman dengan jangkauan pulau Jawa</p>
-                                    </div>
-                                </div>
-                                <div class="faq-accordian-box">
-                                    <div class="faq-accordian-title">
                                         <h6 class="h6-title">Apakah Sadikun BBM membuka peluang kerja sama atau
                                             partnership?</h6>
                                         <span class="icon"></span>
@@ -511,85 +496,85 @@
         </section>
         <!-- END OF FAQ SECTION -->
         <!-- START OF TESTIMONIALS SECTION -->
-        <section class="global-clients light-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 order-lg-1 order-2 align-self-center">
-                        <div class="global-clients-list wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">
-                            @foreach($clients as $client)
-                                @if($client->logo)
-                                    <img src="{{ asset('storage/' . $client->logo) }}" width="130" height="34" alt="Boltshift Icon">
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="col-lg-5 order-lg-2 order-1">
-                        <div class="global-clients-content wow fadeInRight" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="sec-title">
-                                <span class="sub-title">
-                                    <img src="{{ asset('vendor/landing') }}/assets/images/setting-icon.svg" width="18" height="18" alt="Setting Icon">
-                                    TRUSTED BY
-                                </span>
-                                <h2 class="h2-title">Our {{ $clients->count() }} Clients</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="testimonials">
-            <img src="{{asset('vendor/landing')}}/assets/images/globe.svg" class="bg-glob" width="687" height="744"
-                 alt="Globe Icon">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="sec-title">
-                            <span class="sub-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                                <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"
-                                     height="18" alt="Setting Icon">
-                                TESTIMONIAL
-                            </span>
-                            <h2 class="h2-title m-0 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">What
-                                Client Say About Us</h2>
-                        </div>
-                        <div class="swiper testimonial-slider wow fadeInUp" data-wow-duration=".8s"
-                             data-wow-delay=".2s">
-                            <div class="swiper-wrapper">
-                                @foreach($testimonials as $testimonial)
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-box">
-                                            <span class="quote_icon"></span>
-                                            <div class="testimonial-author">
-                                                @if($testimonial->image)
-                                                    <div class="author-img">
-                                                        <div class="back-img"
-                                                             style="background-image: url('{{asset('storage/' . $testimonial->image)}}');"></div>
-                                                    </div>
-                                                @else
-                                                    <div class="author-img">
-                                                        <div class="back-img"
-                                                             style="background-image: url('{{asset('vendor/landing')}}/assets/images/mark-john.jpg');"></div>
-                                                    </div>
-                                                @endif
-                                                <div class="author-content">
-                                                    <h4 class="h4-title">{{ $testimonial->name }}</h4>
-                                                    <span>{{ $testimonial->company }}</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <div class="testimonial-text overflow-text" data-simplebar="">
-                                                    <p>{{ $testimonial->quote }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                            <div class="testimonial-pagination"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="global-clients light-bg">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-7 order-lg-1 order-2 align-self-center">--}}
+{{--                        <div class="global-clients-list wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+{{--                            @foreach($clients as $client)--}}
+{{--                                @if($client->logo)--}}
+{{--                                    <img src="{{ asset('storage/' . $client->logo) }}" width="130" height="34" alt="Boltshift Icon">--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-lg-5 order-lg-2 order-1">--}}
+{{--                        <div class="global-clients-content wow fadeInRight" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+{{--                            <div class="sec-title">--}}
+{{--                                <span class="sub-title">--}}
+{{--                                    <img src="{{ asset('vendor/landing') }}/assets/images/setting-icon.svg" width="18" height="18" alt="Setting Icon">--}}
+{{--                                    TRUSTED BY--}}
+{{--                                </span>--}}
+{{--                                <h2 class="h2-title">Our {{ $clients->count() }} Clients</h2>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
+{{--        <section class="testimonials">--}}
+{{--            <img src="{{asset('vendor/landing')}}/assets/images/globe.svg" class="bg-glob" width="687" height="744"--}}
+{{--                 alt="Globe Icon">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div class="sec-title">--}}
+{{--                            <span class="sub-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+{{--                                <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"--}}
+{{--                                     height="18" alt="Setting Icon">--}}
+{{--                                TESTIMONIAL--}}
+{{--                            </span>--}}
+{{--                            <h2 class="h2-title m-0 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">What--}}
+{{--                                Client Say About Us</h2>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper testimonial-slider wow fadeInUp" data-wow-duration=".8s"--}}
+{{--                             data-wow-delay=".2s">--}}
+{{--                            <div class="swiper-wrapper">--}}
+{{--                                @foreach($testimonials as $testimonial)--}}
+{{--                                    <div class="swiper-slide">--}}
+{{--                                        <div class="testimonial-box">--}}
+{{--                                            <span class="quote_icon"></span>--}}
+{{--                                            <div class="testimonial-author">--}}
+{{--                                                @if($testimonial->image)--}}
+{{--                                                    <div class="author-img">--}}
+{{--                                                        <div class="back-img"--}}
+{{--                                                             style="background-image: url('{{asset('storage/' . $testimonial->image)}}');"></div>--}}
+{{--                                                    </div>--}}
+{{--                                                @else--}}
+{{--                                                    <div class="author-img">--}}
+{{--                                                        <div class="back-img"--}}
+{{--                                                             style="background-image: url('{{asset('vendor/landing')}}/assets/images/mark-john.jpg');"></div>--}}
+{{--                                                    </div>--}}
+{{--                                                @endif--}}
+{{--                                                <div class="author-content">--}}
+{{--                                                    <h4 class="h4-title">{{ $testimonial->name }}</h4>--}}
+{{--                                                    <span>{{ $testimonial->company }}</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="testimonial-content">--}}
+{{--                                                <div class="testimonial-text overflow-text" data-simplebar="">--}}
+{{--                                                    <p>{{ $testimonial->quote }}</p>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                            <div class="testimonial-pagination"></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
     </main>
 @endsection

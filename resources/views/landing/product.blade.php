@@ -188,11 +188,7 @@
         <section class="best-quality">
             <div class="container">
                 <div class="sec-title text-center wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                    <span class="sub-title">
-                        <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18" height="18" alt="Setting Icon">
-                        WHAT WE PROVIDE
-                    </span>
-                    <h2 class="h2-title">We Provide Best Quality</h2>
+                    <h2 class="h2-title">We Are Your Energy Partner</h2>
                 </div>
                 <div class="sec-content">
                     <div class="row">
@@ -203,7 +199,7 @@
                                 </span>
                                 <div class="quality-content">
                                     <h4 class="h4-title">Distribusi BBM Industri</h4>
-                                    <p>Sadikun menyediakan bahan bakar minyak untuk kebutuhan industri dengan distribusi yang cepat, aman, dan terpercaya ke seluruh wilayah Indonesia.</p>
+                                    <p>Sadikun BBM menyediakan bahan bakar minyak untuk kebutuhan industri dengan distribusi yang cepat, aman, dan terpercaya di setiap titik kebutuhan</p>
                                 </div>
                             </div>
                         </div>
@@ -213,8 +209,8 @@
                                     <img src="{{asset('vendor/landing')}}/assets/images/general-contract-icon.svg" width="33" height="37" alt="General Contract Icon">
                                 </span>
                                 <div class="quality-content">
-                                    <h4 class="h4-title">Pasokan Gas Industri</h4>
-                                    <p>Menyediakan berbagai jenis gas industri (seperti LPG, LNG, dan lainnya) untuk mendukung sektor manufaktur, energi, dan transportasi.</p>
+                                    <h4 class="h4-title">Pasokan BBM Industri</h4>
+                                    <p>Berkomitmen menjaga ketersediaan produk dalam berbagai kapasitas sesuai kebutuhan Anda.</p>
                                 </div>
                             </div>
                         </div>

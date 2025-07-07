@@ -18,9 +18,9 @@
        }
 @endphp
 <header id="site_header" class="site-header">
-    <div class="header-top">
+    <div class="header-top" style="background-color: #ffffff;">
         <div class="container">
-            <div class="top-hader-main-box white-text">
+            <div class="top-hader-main-box black-text">
                 <p class="m-0">Welcome to PT Sadikun BBM</p>
                 <ul class="header-social">
                     @if(isset($data['contact_email']))
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <div class="heder-main">
+    <div class="heder-main" style="background-color: #FFFFFF;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">

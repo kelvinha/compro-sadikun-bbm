@@ -834,7 +834,7 @@ body.compensate-for-scrollbar {
 
 .main-navigation ul li {
     position: relative;
-    color: var(--white-color);
+    color: var(--dark-color);
 }
 
 .main-navigation ul li a {
@@ -2538,7 +2538,8 @@ body.compensate-for-scrollbar {
 .footer-branding p,
 .footer-links ul li a,
 .footer-contact .contact-link a {
-    color: rgba(255 255 255 / .8);
+    color: var(--dark-color);
+    /*color: rgba(255 255 255 / .8);*/
 }
 
 .footer-links ul li a:hover, .footer-contact .contact-link a:hover, .bottom-footer-content ul li a:hover, .bottom-footer-text a, .footer-links ul li.active-footer-menu a {
@@ -3179,10 +3180,10 @@ body.compensate-for-scrollbar {
 
 .world-map>span {
     position: absolute;
-    width: 10px;
+    width: 8px;
     aspect-ratio: 1/1;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 150%;
     display: inline-flex;
     background-color: var(--secondary-color);
     animation: waveBtn 2s infinite;
@@ -3250,6 +3251,32 @@ body.compensate-for-scrollbar {
 .world-map>span.australia {
     top: 80%;
     left: 88.75%;
+}
+
+/* pin point map indonesia */
+.world-map>span.banten {
+    top: 60%;
+    left: 25.5%;
+}
+
+.world-map>span.jakarta {
+    top: 59%;
+    left: 27.8%;
+}
+
+.world-map>span.jabar {
+    top: 61%;
+    left: 30%;
+}
+
+.world-map>span.jatim {
+    top: 63.5%;
+    left: 36.9%;
+}
+
+.world-map>span.bali {
+    top: 64.8%;
+    left: 42.5%;
 }
 
 .client-list {
@@ -4893,7 +4920,7 @@ blockquote .quote-icon {
     }
 
     .join-us-content>img {
-        width: 100%;
+        width: 10%;
     }
 
     .banner-shape {

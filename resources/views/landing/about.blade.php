@@ -4,7 +4,7 @@
     <main class="site-main">
         <!-- START OF INNER BANNER -->
         <section class="inner-banner back-img"
-                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner.jpg');">
+                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about_us_intro_2.jpg');">
             <div class="banner-stripes">
                 <span></span>
                 <span></span>
@@ -47,14 +47,14 @@
                     <div class="col-lg-6">
                         <div class="about-images wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">
                             <div class="about-top-image back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about-us-1.jpg');">
+                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about_us_intro.jpg');">
                                 <span class="logo-icon">
                                     <img src="{{asset('vendor/landing')}}/assets/images/logo-icon.svg" width="48"
                                          height="48" alt="Logo Icon">
                                 </span>
                             </div>
                             <div class="about-bottom-image back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about-us-2.jpg');"></div>
+                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/about_us_intro_2.jpg');"></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -164,9 +164,8 @@
                                 </span>
                                 <h3 class="h3-title">Join The Future Of Industry Now</h3>
                             </div>
-                            <img src="{{asset('vendor/landing')}}/assets/images/join-our-team.png" width="271"
-                                 height="271" alt="Join our team image">
-                            <a href="contact-us.html" class="sec-btn" title="Get a Quote">Get a Quote</a>
+                            <img src="{{asset('vendor/landing')}}/assets/images/banner-join-now.png" alt="Join our team image" style="height: 100%; width: 100%;">
+                            <a href="https://wa.me/6281288062737?text=Halo%21%20Saya%20menemukan%20kontak%20ini%20dari%20website%20dan%20tertarik%20dengan%20layanan%2Fproduk%20yang%20ditawarkan.%20Boleh%20minta%20informasi%20lebih%20lengkapnya%3F%20Terima%20kasih%20sebelumnya." target="_blank" class="sec-btn" title="Get a Quote">Get a Quote</a>
                             <div class="banner-shape">
                                 <span class="stripe"></span>
                                 <span class="stripe stripe-secondary"></span>
@@ -213,15 +212,15 @@
                             <div class="row">
                                 <div class="col-8">
                                     <div class="why-choose-image why-choose-1 back-img"
-                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/choose-us-1.jpg');"></div>
+                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/why-choose-us-1.jpg');"></div>
                                 </div>
                                 <div class="col-4 align-self-center">
                                     <div class="why-choose-image why-choose-2 back-img"
-                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/choose-us-2.jpg');"></div>
+                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/why-choose-us-2.jpg');"></div>
                                 </div>
                                 <div class="col-12">
                                     <div class="why-choose-image why-choose-3 back-img"
-                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/choose-us-3.jpg');"></div>
+                                         style="background-image: url('{{asset('vendor/landing')}}/assets/images/why-choose-us-3.jpg');"></div>
                                 </div>
                             </div>
                         </div>
@@ -293,18 +292,13 @@
                     <div class="col-lg-6">
                         <div class="world-map-wp wow fadeInLeft" data-wow-duration=".8s" data-wow-delay=".2s">
                             <div class="world-map">
-                                <img src="{{asset('vendor/landing')}}/assets/images/world-map.png" width="899"
+                                <img src="{{asset('vendor/landing')}}/assets/images/indonesia-map.png" width="899"
                                      height="537" alt="World map">
-                                <span class="alaska"></span>
-                                <span class="usa"></span>
-                                <span class="brazil"></span>
-                                <span class="greenland"></span>
-                                <span class="africa"></span>
-                                <span class="russia"></span>
-                                <span class="india"></span>
-                                <span class="china"></span>
-                                <span class="russia-2"></span>
-                                <span class="australia"></span>
+                                <span class="banten"></span>
+                                <span class="jakarta"></span>
+                                <span class="jabar"></span>
+                                <span class="jatim"></span>
+                                <span class="bali"></span>
                             </div>
                         </div>
                     </div>
@@ -314,85 +308,63 @@
                                 <span class="sub-title">
                                     <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"
                                          height="18" alt="Setting Icon">
-                                    WE ARE GLOBLE
+                                    From Sabang to Merauke
                                 </span>
-                                <h2 class="h2-title">We Have 500+ Clients Globally</h2>
+                                <h2 class="h2-title">Serving over 1000+ clients nationwide</h2>
                             </div>
-                            <p>Vivamus sagittis, mi id viverra dapibus, ipsum diam egestas mi, et fringilla erat est
-                                dapibus nibh. Integer pulvinar, sapien a malesuada rutrum, diam lorem consequat sapien,
-                                in volutpat sapien metus quis ipsum. Cras tellus ex, rhoncus vel lacus ut, eleifend
-                                pretium turpis. Phasellus consectetur orci vitae dictum luctus.</p>
-                            <a href="contact-us.html" class="sec-btn" title="Contact Us">Contact Us</a>
+                            <p>Didukung oleh kepercayaan lebih dari 1000 pelanggan di seluruh Indonesia, kami berkomitmen menghadirkan layanan yang profesional dengan mengedepankan kualitas, keandalan, serta integritas tinggi,
+                                sehingga bisa menjadi mitra strategis Anda dalam mendukung kemajuan industri nasional.</p>
+                            <a href="route{{ ('home.contact') }}" class="sec-btn" title="Contact Us">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- END OF WE ARE GLOBAL -->
-        <!-- START OF WE ARE GLOBAL -->
-        <div class="client-list secondary-bg wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-            <div class="container">
-                <div class="client-list-wp">
-                    <img src="{{asset('vendor/landing')}}/assets/images/boltshift.svg" width="130" height="34"
-                         alt="Boltshift Icon">
-                    <img src="{{asset('vendor/landing')}}/assets/images/lightbox.svg" width="130" height="33"
-                         alt="Lightbox Icon">
-                    <img src="{{asset('vendor/landing')}}/assets/images/shperule.svg" width="130" height="39"
-                         alt="Shperule Icon">
-                    <img src="{{asset('vendor/landing')}}/assets/images/globalbank.svg" width="130" height="30"
-                         alt="Global bank Icon">
-                    <img src="{{asset('vendor/landing')}}/assets/images/nietzsche.svg" width="130" height="31"
-                         alt="Nietzsche Icon">
-                    <img src="{{asset('vendor/landing')}}/assets/images/acme-corp.svg" width="130" height="29"
-                         alt="Acme corp Icon">
-                </div>
-            </div>
-        </div>
-        <!-- END OF WE ARE GLOBAL -->
         <!-- START OF BLOG SECTION -->
-        <section class="blog-section">
-            <div class="container">
-                <div class="sec-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                    <span class="sub-title">
-                        <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18" height="18"
-                             alt="Setting Icon">
-                        OUR BLOG
-                    </span>
-                    <h2 class="h2-title m-0">Latest Blog & News</h2>
-                </div>
-                <div class="blog-box-wp">
-                    <div class="row justify-content-center">
-                        @foreach($currentBlogs as $currentBlog)
-                            <div class="col-lg-4 col-md-6">
-                                <div class="blog-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                                    <div class="blog-image">
-                                        @if($currentBlog->featured_image)
-                                            <a href="{{ route('home.blog.post', $currentBlog->slug) }}" class="back-img"
-                                               style="background-image: url('{{asset('storage/' . $currentBlog->featured_image)}}');"
-                                               title="{{ $currentBlog->title }}"></a>
-                                        @else
-                                            <a href="{{ route('home.blog.post', $currentBlog->slug) }}" class="back-img"
-                                               style="background-image: url('{{asset('vendor/landing')}}/assets/images/default-blog-image.svg');"
-                                               title="{{ $currentBlog->title }}"></a>
-                                        @endif
-                                        <p class="blog-published">{{ $currentBlog->published_at->format('l, j F Y')  }}</p>
-                                    </div>
-                                    <div class="blog-box-content">
-                                        <h4 class="h4-title">
-                                            <a href="{{ route('home.blog.post', $currentBlog->slug) }}"
-                                               title="{{ $currentBlog->title }}">{{ $currentBlog->title }}</a>
-                                        </h4>
-                                        <p>{{ $currentBlog->excerpt  }}</p>
-                                        <a href="{{ route('home.blog.post', $currentBlog->slug) }}" class="sec-btn"
-                                           title="{{ $currentBlog->excerpt  }}"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="blog-section">--}}
+{{--            <div class="container">--}}
+{{--                <div class="sec-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+{{--                    <span class="sub-title">--}}
+{{--                        <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18" height="18"--}}
+{{--                             alt="Setting Icon">--}}
+{{--                        OUR BLOG--}}
+{{--                    </span>--}}
+{{--                    <h2 class="h2-title m-0">Latest Blog & News</h2>--}}
+{{--                </div>--}}
+{{--                <div class="blog-box-wp">--}}
+{{--                    <div class="row justify-content-center">--}}
+{{--                        @foreach($currentBlogs as $currentBlog)--}}
+{{--                            <div class="col-lg-4 col-md-6">--}}
+{{--                                <div class="blog-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+{{--                                    <div class="blog-image">--}}
+{{--                                        @if($currentBlog->featured_image)--}}
+{{--                                            <a href="{{ route('home.blog.post', $currentBlog->slug) }}" class="back-img"--}}
+{{--                                               style="background-image: url('{{asset('storage/' . $currentBlog->featured_image)}}');"--}}
+{{--                                               title="{{ $currentBlog->title }}"></a>--}}
+{{--                                        @else--}}
+{{--                                            <a href="{{ route('home.blog.post', $currentBlog->slug) }}" class="back-img"--}}
+{{--                                               style="background-image: url('{{asset('vendor/landing')}}/assets/images/default-blog-image.svg');"--}}
+{{--                                               title="{{ $currentBlog->title }}"></a>--}}
+{{--                                        @endif--}}
+{{--                                        <p class="blog-published">{{ $currentBlog->published_at->format('l, j F Y')  }}</p>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="blog-box-content">--}}
+{{--                                        <h4 class="h4-title">--}}
+{{--                                            <a href="{{ route('home.blog.post', $currentBlog->slug) }}"--}}
+{{--                                               title="{{ $currentBlog->title }}">{{ $currentBlog->title }}</a>--}}
+{{--                                        </h4>--}}
+{{--                                        <p>{{ $currentBlog->excerpt  }}</p>--}}
+{{--                                        <a href="{{ route('home.blog.post', $currentBlog->slug) }}" class="sec-btn"--}}
+{{--                                           title="{{ $currentBlog->excerpt  }}"></a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
         <!-- END OF BLOG SECTION -->
     </main>
 @endsection

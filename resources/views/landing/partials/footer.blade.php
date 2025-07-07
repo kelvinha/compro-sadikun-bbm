@@ -35,7 +35,7 @@
         }
     }
 @endphp
-<footer class="site-footer white-text">
+<footer class="site-footer black-text" style="background-color: #FFFFFF;">
     <div class="top-footer">
         <div class="banner-shape">
             <span class="stripe"></span>
@@ -106,7 +106,7 @@
                             <li>
                                 <div class="contact-item">
                                         <span class="contact-icon">
-                                            <i class="fas fa-map-marker-alt"></i>
+                                            <i class="fas fa-map-marker-alt" style="color: #FFFFFF;"></i>
                                         </span>
                                     <div class="contact-link">
                                         <a href="https://maps.app.goo.gl/ZwA6bivb8dijZNoAA" title="{{ $data['contact_address'] }}" target="_blank">{{ $data['contact_address'] }}</a>
@@ -116,7 +116,7 @@
                             <li>
                                 <div class="contact-item">
                                         <span class="contact-icon">
-                                            <i class="fas fa-envelope"></i>
+                                            <i class="fas fa-envelope" style="color: #FFFFFF;"></i>
                                         </span>
                                     <div class="contact-link">
                                         <a href="mailto:{{ $data['contact_email'] }}"
@@ -127,7 +127,7 @@
                             <li>
                                 <div class="contact-item">
                                         <span class="contact-icon">
-                                            <i class="fas fa-phone-alt"></i>
+                                            <i class="fas fa-phone-alt" style="color: #FFFFFF;"></i>
                                         </span>
                                     <div class="contact-link">
                                         <a href="tel:{{ $data['contact_phone'] }}" title="Call on {{ $data['contact_phone'] }}">
