@@ -8,7 +8,7 @@
 @section('content')
     <main class="site-main">
         <!-- START OF BANNER -->
-        <section class="inner-banner back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner.jpg');">
+        <section class="inner-banner back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner-our-product.png');">
             <div class="banner-stripes">
                 <span></span>
                 <span></span>
