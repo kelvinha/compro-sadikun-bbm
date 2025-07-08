@@ -8,7 +8,8 @@
 @section('content')
     <main class="site-main">
         <!-- START OF BANNER -->
-        <section class="inner-banner back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner-our-product.png');">
+        <section class="inner-banner back-img"
+                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner-our-product.png');">
             <div class="banner-stripes">
                 <span></span>
                 <span></span>
@@ -27,7 +28,8 @@
                             <div class="inner-banner-content wow fadeInUp" data-wow-duration=".8s">
                                 <h1 class="h1-title">Our Products</h1>
                             </div>
-                            <div class="inner-banner-breadcrumb wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
+                            <div class="inner-banner-breadcrumb wow fadeInUp" data-wow-duration=".8s"
+                                 data-wow-delay=".2s">
                                 <ul>
                                     <li>
                                         <a href="{{ route('home.index') }}" title="Home">Home</a>
@@ -51,16 +53,32 @@
                         <div class="col-lg-6 col-xxl-3 col-sm-4">
                             <div class="services-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <div class="services-image">
-                                    <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
+                                    @if($product->image)
+                                        <div class="back-img"
+                                             style="background-image: url('{{asset('storage/' . $product->image)}}');"></div>
+                                    @else
+                                        <div class="back-img"
+                                             style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
+                                    @endif
                                 </div>
                                 <div class="services-box-icon">
                                     <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg" width="38" height="38" alt="All Maintenance Icon">
                                 </div>
                                 <div class="services-box-content">
-                                    <h4 class="h4-title">
-                                        <a href="{{ route('home.products.show', $product->slug) }}"  target="_blank" title="All Maintenance">{{ $product->title }}</a>
-                                    </h4>
-                                    {!! $product->short_description !!}
+                                    @php
+                                        $maxLength = 40;
+                                        $title = $product->title;
+                                    @endphp
+
+                                    <div style="height: 130px;">
+                                        <h4 class="h4-title">
+                                            <a href="{{ route('home.products.show', $product->slug) }}" target="_blank"
+                                               title="{{ $title }}">
+                                                {{ Str::limit($title, $maxLength, strlen($title) > $maxLength ? '...' : '') }}
+                                            </a>
+                                        </h4>
+                                    </div>
+{{--                                    {!! $product->short_description !!}--}}
                                 </div>
                             </div>
                         </div>
@@ -77,102 +95,122 @@
                         <div class="our-work-content-wp">
                             <div class="sec-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <span class="sub-title">
-                                    <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18" height="18" alt="Setting Icon">
+                                    <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"
+                                         height="18" alt="Setting Icon">
                                     PORTFOLIO
                                 </span>
                                 <h2 class="h2-title m-0">Explore Our Work</h2>
                             </div>
-                            <div class="more-work">
-                                <a href="portfolio.html" class="sec-btn wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s" title="Discover More">Discover More</a>
-                            </div>
+{{--                            <div class="more-work">--}}
+{{--                                <a href="portfolio.html" class="sec-btn wow fadeInUp" data-wow-duration=".8s"--}}
+{{--                                   data-wow-delay=".2s" title="Discover More">Discover More</a>--}}
+{{--                            </div>--}}
                             <div class="our-work-slider-wp wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <div class="swiper our-work-slider">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
                                             <div class="our-work-box">
-                                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/work-1.jpg');"></div>
-                                                <div class="our-work-content">
-                                                    <div class="our-work-name">
-                                                        <h4 class="h4-title">
-                                                            <a href="portfolio.html" title="Electronic Material">Electronic Material</a>
-                                                        </h4>
-                                                        <span class="work-category">Industry Work</span>
-                                                    </div>
-                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg" title="Go to Electronic Material"></a>
-                                                </div>
+                                                <div class="back-img"
+                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-1.jpg');"></div>
+{{--                                                <div class="our-work-content">--}}
+{{--                                                    <div class="our-work-name">--}}
+{{--                                                        <h4 class="h4-title">--}}
+{{--                                                            <a href="portfolio.html" title="Electronic Material">Electronic--}}
+{{--                                                                Material</a>--}}
+{{--                                                        </h4>--}}
+{{--                                                        <span class="work-category">Industry Work</span>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg"--}}
+{{--                                                       title="Go to Electronic Material"></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="our-work-box">
-                                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/work-2.jpg');"></div>
-                                                <div class="our-work-content">
-                                                    <div class="our-work-name">
-                                                        <h4 class="h4-title">
-                                                            <a href="portfolio.html" title="Electronic Material">Electronic Material</a>
-                                                        </h4>
-                                                        <span class="work-category">Industry Work</span>
-                                                    </div>
-                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg" title="Go to Electronic Material"></a>
-                                                </div>
+                                                <div class="back-img"
+                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-2.jpg');"></div>
+{{--                                                <div class="our-work-content">--}}
+{{--                                                    <div class="our-work-name">--}}
+{{--                                                        <h4 class="h4-title">--}}
+{{--                                                            <a href="portfolio.html" title="Electronic Material">Electronic--}}
+{{--                                                                Material</a>--}}
+{{--                                                        </h4>--}}
+{{--                                                        <span class="work-category">Industry Work</span>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg"--}}
+{{--                                                       title="Go to Electronic Material"></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="our-work-box">
-                                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/work-3.jpg');"></div>
-                                                <div class="our-work-content">
-                                                    <div class="our-work-name">
-                                                        <h4 class="h4-title">
-                                                            <a href="portfolio.html" title="Electronic Material">Electronic Material</a>
-                                                        </h4>
-                                                        <span class="work-category">Industry Work</span>
-                                                    </div>
-                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg" title="Go to Electronic Material"></a>
-                                                </div>
+                                                <div class="back-img"
+                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-3.jpg');"></div>
+{{--                                                <div class="our-work-content">--}}
+{{--                                                    <div class="our-work-name">--}}
+{{--                                                        <h4 class="h4-title">--}}
+{{--                                                            <a href="portfolio.html" title="Electronic Material">Electronic--}}
+{{--                                                                Material</a>--}}
+{{--                                                        </h4>--}}
+{{--                                                        <span class="work-category">Industry Work</span>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg"--}}
+{{--                                                       title="Go to Electronic Material"></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="our-work-box">
-                                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/explore-work-1-min.jpg');">
+                                                <div class="back-img"
+                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-4.jpg');">
                                                 </div>
-                                                <div class="our-work-content">
-                                                    <div class="our-work-name">
-                                                        <h4 class="h4-title">
-                                                            <a href="portfolio.html" title="Electronic Material">Electronic Material</a>
-                                                        </h4>
-                                                        <span class="work-category">Industry Work</span>
-                                                    </div>
-                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg" title="Go to Electronic Material"></a>
-                                                </div>
+{{--                                                <div class="our-work-content">--}}
+{{--                                                    <div class="our-work-name">--}}
+{{--                                                        <h4 class="h4-title">--}}
+{{--                                                            <a href="portfolio.html" title="Electronic Material">Electronic--}}
+{{--                                                                Material</a>--}}
+{{--                                                        </h4>--}}
+{{--                                                        <span class="work-category">Industry Work</span>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg"--}}
+{{--                                                       title="Go to Electronic Material"></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="our-work-box">
-                                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/explore-work-2-min.jpg');">
+                                                <div class="back-img"
+                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-5.jpg');">
                                                 </div>
-                                                <div class="our-work-content">
-                                                    <div class="our-work-name">
-                                                        <h4 class="h4-title">
-                                                            <a href="portfolio.html" title="Electronic Material">Electronic Material</a>
-                                                        </h4>
-                                                        <span class="work-category">Industry Work</span>
-                                                    </div>
-                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg" title="Go to Electronic Material"></a>
-                                                </div>
+{{--                                                <div class="our-work-content">--}}
+{{--                                                    <div class="our-work-name">--}}
+{{--                                                        <h4 class="h4-title">--}}
+{{--                                                            <a href="portfolio.html" title="Electronic Material">Electronic--}}
+{{--                                                                Material</a>--}}
+{{--                                                        </h4>--}}
+{{--                                                        <span class="work-category">Industry Work</span>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg"--}}
+{{--                                                       title="Go to Electronic Material"></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="our-work-box">
-                                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/explore-work-3-min.jpg');">
+                                                <div class="back-img"
+                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-6.jpg');">
                                                 </div>
-                                                <div class="our-work-content">
-                                                    <div class="our-work-name">
-                                                        <h4 class="h4-title">
-                                                            <a href="portfolio.html" title="Electronic Material">Electronic Material</a>
-                                                        </h4>
-                                                        <span class="work-category">Industry Work</span>
-                                                    </div>
-                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg" title="Go to Electronic Material"></a>
-                                                </div>
+{{--                                                <div class="our-work-content">--}}
+{{--                                                    <div class="our-work-name">--}}
+{{--                                                        <h4 class="h4-title">--}}
+{{--                                                            <a href="portfolio.html" title="Electronic Material">Electronic--}}
+{{--                                                                Material</a>--}}
+{{--                                                        </h4>--}}
+{{--                                                        <span class="work-category">Industry Work</span>--}}
+{{--                                                    </div>--}}
+{{--                                                    <a href="portfolio.html" class="read-more-services sec-btn icon-lg"--}}
+{{--                                                       title="Go to Electronic Material"></a>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -195,44 +233,52 @@
                         <div class="col-lg-6">
                             <div class="best-quality-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <span class="quality-icon">
-                                    <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg" width="38" height="38" alt="All Maintenance Icon">
+                                    <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg"
+                                         width="38" height="38" alt="All Maintenance Icon">
                                 </span>
                                 <div class="quality-content">
                                     <h4 class="h4-title">Distribusi BBM Industri</h4>
-                                    <p>Sadikun BBM menyediakan bahan bakar minyak untuk kebutuhan industri dengan distribusi yang cepat, aman, dan terpercaya di setiap titik kebutuhan</p>
+                                    <p>Sadikun BBM menyediakan bahan bakar minyak untuk kebutuhan industri dengan
+                                        distribusi yang cepat, aman, dan terpercaya di setiap titik kebutuhan</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="best-quality-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <span class="quality-icon">
-                                    <img src="{{asset('vendor/landing')}}/assets/images/general-contract-icon.svg" width="33" height="37" alt="General Contract Icon">
+                                    <img src="{{asset('vendor/landing')}}/assets/images/general-contract-icon.svg"
+                                         width="33" height="37" alt="General Contract Icon">
                                 </span>
                                 <div class="quality-content">
                                     <h4 class="h4-title">Pasokan BBM Industri</h4>
-                                    <p>Berkomitmen menjaga ketersediaan produk dalam berbagai kapasitas sesuai kebutuhan Anda.</p>
+                                    <p>Berkomitmen menjaga ketersediaan produk dalam berbagai kapasitas sesuai kebutuhan
+                                        Anda.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="best-quality-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <span class="quality-icon">
-                                    <img src="{{asset('vendor/landing')}}/assets/images/automobiles-icon.svg" width="35" height="35" alt="Automobiles Icon">
+                                    <img src="{{asset('vendor/landing')}}/assets/images/automobiles-icon.svg" width="35"
+                                         height="35" alt="Automobiles Icon">
                                 </span>
                                 <div class="quality-content">
                                     <h4 class="h4-title">Solusi Energi Terintegrasis</h4>
-                                    <p>Kami menawarkan solusi lengkap dari pengadaan, pengelolaan, hingga efisiensi energi untuk berbagai kebutuhan bisnis dan industri</p>
+                                    <p>Kami menawarkan solusi lengkap dari pengadaan, pengelolaan, hingga efisiensi
+                                        energi untuk berbagai kebutuhan bisnis dan industri</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="best-quality-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <span class="quality-icon">
-                                    <img src="{{asset('vendor/landing')}}/assets/images/mechanical-parts-icon.svg" width="35" height="35" alt="Mechanical Parts Icon">
+                                    <img src="{{asset('vendor/landing')}}/assets/images/mechanical-parts-icon.svg"
+                                         width="35" height="35" alt="Mechanical Parts Icon">
                                 </span>
                                 <div class="quality-content">
                                     <h4 class="h4-title">Layanan Konsultasi Energi</h4>
-                                    <p>Tim ahli kami siap membantu Anda merancang strategi energi yang hemat biaya dan ramah lingkungan.</p>
+                                    <p>Tim ahli kami siap membantu Anda merancang strategi energi yang hemat biaya dan
+                                        ramah lingkungan.</p>
                                 </div>
                             </div>
                         </div>
@@ -276,7 +322,8 @@
                                         <span class="icon"></span>
                                     </div>
                                     <div class="faq-accordian-content">
-                                        <p>Kami menawarkan berbagai jenis produk BBM <a href="{{ route('home.products') }}">lihat disini</a></p>
+                                        <p>Kami menawarkan berbagai jenis produk BBM <a
+                                                href="{{ route('home.products') }}">lihat disini</a></p>
                                     </div>
                                 </div>
                                 <div class="faq-accordian-box">

@@ -83,7 +83,7 @@ class ProductController extends Controller
     /**
      * Display the specified product.
      *
-     * @param  string  $slug
+     * @param string $slug
      * @return \Illuminate\View\View
      */
     public function show($slug)
@@ -120,7 +120,7 @@ class ProductController extends Controller
     /**
      * Display products by category.
      *
-     * @param  string  $slug
+     * @param string $slug
      * @return \Illuminate\View\View
      */
     public function category($slug)
@@ -171,8 +171,7 @@ class ProductController extends Controller
         $product = Product::where('slug', $slug)
             ->where('status', 'active')
             ->firstOrFail();
-        // TODO: change to be product_catalog
-        //   return response()->file(public_path('storage/'. $product->product_catalog), ['Content-Type' => 'application/pdf']);
-        return response()->file(public_path('storage/sample.pdf'), ['Content-Type' => 'application/pdf']);
+
+        return response()->file(public_path('storage/' . $product->product_catalog), ['Content-Type' => 'application/pdf']);
     }
 }
