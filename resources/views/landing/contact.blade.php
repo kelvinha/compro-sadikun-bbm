@@ -62,19 +62,19 @@
                                 <h4 class="h4-title">Main Office</h4>
                                 <ul>
                                     <li>
-                                        <a href="tel:+628111030322" title="Call on +62 213 864 386">
+                                        <a href="tel:{{ $contactInfo['phone'] }}" title="Call on +62 213 864 386">
                                             <img src="{{asset('vendor/landing')}}/assets/images/phone-icon.svg"
                                                  width="18" height="18" alt="Phone Icon">
-                                            <span>+62 213 864 386</span>
+                                            <span>{{ $contactInfo['phone'] }}</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="mailto:marketing_official@sadikun.com"
+                                        <a href="mailto:{{ $contactInfo['email'] }}"
                                            title="Mail on marketing_official@sadikun.com">
                                             <img src="{{asset('vendor/landing')}}/assets/images/mail-icon.svg"
                                                  width="18" height="13"
                                                  alt="Mail Icon">
-                                            <span>marketing_official@sadikunbbm.com</span>
+                                            <span>{{ $contactInfo['email'] }}</span>
                                         </a>
                                     </li>
                                     <li>
