@@ -201,4 +201,38 @@
             }
         </style>
     @endif
+    <style>
+        .marquee-container {
+            overflow: hidden;
+            z-index: 999;
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: fit-content;
+            /*z-index: 999;*/
+            animation: marquee 50s linear infinite;
+        }
+
+        .marquee-slide {
+            min-width: 550px;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            margin-right: 20px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
 </head>

@@ -314,7 +314,7 @@
                             </div>
                             <p>Didukung oleh kepercayaan lebih dari 1000 pelanggan di seluruh Indonesia, kami berkomitmen menghadirkan layanan yang profesional dengan mengedepankan kualitas, keandalan, serta integritas tinggi,
                                 sehingga bisa menjadi mitra strategis Anda dalam mendukung kemajuan industri nasional.</p>
-                            <a href="route{{ ('home.contact') }}" class="sec-btn" title="Contact Us">Contact Us</a>
+                            <a href="{{ route('home.contact') }}" class="sec-btn" title="Contact Us">Contact Us</a>
                         </div>
                     </div>
                 </div>
