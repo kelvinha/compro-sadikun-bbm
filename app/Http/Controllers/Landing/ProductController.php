@@ -81,11 +81,9 @@ class ProductController extends Controller
         $featuredProducts = ProductHelper::getFeatured(3);
 
         // Get Gallery
-        $medias = Cache::remember('product_categories_all', 60 * 10, function () {
-            return Media::where('disk', 'public')
+        $medias = Media::where('disk', 'public')
             ->orderBy('created_at', 'desc')
             ->get();
-        });
 
         return view('landing.product', compact('productsPage', 'products', 'featuredProducts', 'categories', 'category', 'sort','medias'));
     }
