@@ -164,8 +164,8 @@
                                 </span>
                                 <h3 class="h3-title">Join The Future Of Industry Now</h3>
                             </div>
-                            <img src="{{asset('vendor/landing')}}/assets/images/banner-join-now.png" alt="Join our team image" style="height: 100%; width: 100%;">
-                            <a href="https://wa.me/6281288062737?text=Halo%21%20Saya%20menemukan%20kontak%20ini%20dari%20website%20dan%20tertarik%20dengan%20layanan%2Fproduk%20yang%20ditawarkan.%20Boleh%20minta%20informasi%20lebih%20lengkapnya%3F%20Terima%20kasih%20sebelumnya." target="_blank" class="sec-btn" title="Get a Quote">Get a Quote</a>
+                            <div style="height: 100%; width: 100%;"></div>
+                            <a href="https://wa.me/6281288062737?text=Halo%21%20Saya%20menemukan%20kontak%20ini%20dari%20website%20dan%20tertarik%20dengan%20layanan%2Fproduk%20yang%20ditawarkan.%20Boleh%20minta%20informasi%20lebih%20lengkapnya%3F%20Terima%20kasih%20sebelumnya." target="_blank" class="sec-btn ml-5" title="CONTACT US">CONTACT US</a>
                             <div class="banner-shape">
                                 <span class="stripe"></span>
                                 <span class="stripe stripe-secondary"></span>
@@ -204,7 +204,7 @@
                                     <span>Komitmen terhadap integritas, kualitas layanan, dan kepuasan pelanggan</span>
                                 </li>
                             </ul>
-                            <a href="services.html" class="sec-btn" title="Discover More">Discover More</a>
+{{--                            <a href="{{ route('home.products') }}" class="sec-btn" title="Discover More">Discover More</a>--}}
                         </div>
                     </div>
                     <div class="col-lg-6 align-self-lg-center">
@@ -230,60 +230,60 @@
         </section>
         <!-- END OF INNOVATIONS -->
         <!-- START OF TESTIMONIALS -->
-        <section class="testimonials dark-bg">
-            <img src="{{asset('vendor/landing')}}/assets/images/globe.svg" class="bg-glob" width="687" height="744"
-                 alt="Globe Icon">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="sec-title">
-                            <span class="sub-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                                <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"
-                                     height="18" alt="Setting Icon">
-                                TESTIMONIAL
-                            </span>
-                            <h2 class="h2-title m-0 wow fadeInUp text-white" data-wow-duration=".8s" data-wow-delay=".2s">What
-                                Client Say About Us</h2>
-                        </div>
-                        <div class="swiper testimonial-slider wow fadeInUp" data-wow-duration=".8s"
-                             data-wow-delay=".2s">
-                            <div class="swiper-wrapper">
-                                @foreach($testimonials as $testimonial)
-                                    <div class="swiper-slide">
-                                        <div class="testimonial-box">
-                                            <span class="quote_icon"></span>
-                                            <div class="testimonial-author">
-                                                @if($testimonial->image)
-                                                    <div class="author-img">
-                                                        <div class="back-img"
-                                                             style="background-image: url('{{asset('storage/' . $testimonial->image)}}');"></div>
-                                                    </div>
-                                                @else
-                                                    <div class="author-img">
-                                                        <div class="back-img"
-                                                             style="background-image: url('{{asset('vendor/landing')}}/assets/images/mark-john.jpg');"></div>
-                                                    </div>
-                                                @endif
-                                                <div class="author-content">
-                                                    <h4 class="h4-title">{{ $testimonial->name }}</h4>
-                                                    <span>{{ $testimonial->company }}</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-content">
-                                                <div class="testimonial-text overflow-text" data-simplebar="">
-                                                    <p>{{ $testimonial->quote }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                            <div class="testimonial-pagination"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+{{--        <section class="testimonials dark-bg">--}}
+{{--            <img src="{{asset('vendor/landing')}}/assets/images/globe.svg" class="bg-glob" width="687" height="744"--}}
+{{--                 alt="Globe Icon">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-lg-12">--}}
+{{--                        <div class="sec-title">--}}
+{{--                            <span class="sub-title wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+{{--                                <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"--}}
+{{--                                     height="18" alt="Setting Icon">--}}
+{{--                                TESTIMONIAL--}}
+{{--                            </span>--}}
+{{--                            <h2 class="h2-title m-0 wow fadeInUp text-white" data-wow-duration=".8s" data-wow-delay=".2s">What--}}
+{{--                                Client Say About Us</h2>--}}
+{{--                        </div>--}}
+{{--                        <div class="swiper testimonial-slider wow fadeInUp" data-wow-duration=".8s"--}}
+{{--                             data-wow-delay=".2s">--}}
+{{--                            <div class="swiper-wrapper">--}}
+{{--                                @foreach($testimonials as $testimonial)--}}
+{{--                                    <div class="swiper-slide">--}}
+{{--                                        <div class="testimonial-box">--}}
+{{--                                            <span class="quote_icon"></span>--}}
+{{--                                            <div class="testimonial-author">--}}
+{{--                                                @if($testimonial->image)--}}
+{{--                                                    <div class="author-img">--}}
+{{--                                                        <div class="back-img"--}}
+{{--                                                             style="background-image: url('{{asset('storage/' . $testimonial->image)}}');"></div>--}}
+{{--                                                    </div>--}}
+{{--                                                @else--}}
+{{--                                                    <div class="author-img">--}}
+{{--                                                        <div class="back-img"--}}
+{{--                                                             style="background-image: url('{{asset('vendor/landing')}}/assets/images/mark-john.jpg');"></div>--}}
+{{--                                                    </div>--}}
+{{--                                                @endif--}}
+{{--                                                <div class="author-content">--}}
+{{--                                                    <h4 class="h4-title">{{ $testimonial->name }}</h4>--}}
+{{--                                                    <span>{{ $testimonial->company }}</span>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="testimonial-content">--}}
+{{--                                                <div class="testimonial-text overflow-text" data-simplebar="">--}}
+{{--                                                    <p>{{ $testimonial->quote }}</p>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
+{{--                            <div class="testimonial-pagination"></div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
         <!-- END OF TESTIMONIALS -->
         <!-- START OF WE ARE GLOBAL -->
         <section class="we-are-global">
@@ -308,13 +308,12 @@
                                 <span class="sub-title">
                                     <img src="{{asset('vendor/landing')}}/assets/images/setting-icon.svg" width="18"
                                          height="18" alt="Setting Icon">
-                                    From Sabang to Merauke
+                                    Powering Your Journey for Every Mile
                                 </span>
-                                <h2 class="h2-title">Serving over 1000+ clients nationwide</h2>
+                                <h2 class="h2-title">Serving over 1000+ clients</h2>
                             </div>
                             <p>Didukung oleh kepercayaan lebih dari 1000 pelanggan di seluruh Indonesia, kami berkomitmen menghadirkan layanan yang profesional dengan mengedepankan kualitas, keandalan, serta integritas tinggi,
                                 sehingga bisa menjadi mitra strategis Anda dalam mendukung kemajuan industri nasional.</p>
-                            <a href="{{ route('home.contact') }}" class="sec-btn" title="Contact Us">Contact Us</a>
                         </div>
                     </div>
                 </div>

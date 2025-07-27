@@ -59,21 +59,30 @@
                         </div>
                         <div class="footer-socials">
                             <ul>
-                                <li>
-                                    <a href="{{ $data['social_facebook'] }}" title="Follow on Facebook" target="_blank">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $data['social_instagram'] }}" title="Follow on Instagram" target="_blank">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $data['social_linkedin'] }}" title="Follow on Linkedin" target="_blank">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
+                                @if (!empty($data['social_facebook']))
+                                    <li>
+                                        <a href="{{ $data['social_facebook'] }}" title="Follow on Facebook" target="_blank">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if (!empty($data['social_instagram']))
+                                    <li>
+                                        <a href="{{ $data['social_instagram'] }}" title="Follow on Instagram" target="_blank">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @if (!empty($data['social_linkedin']))
+                                    <li>
+                                        <a href="{{ $data['social_linkedin'] }}" title="Follow on Linkedin" target="_blank">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
+                                @endif
+
                             </ul>
                         </div>
                     </div>
@@ -146,7 +155,7 @@
         <div class="container">
             <div class="bottom-footer-content">
                 <p class="bottom-footer-text m-0">
-                    Copyright © <span id="copy-right-year">2025</span>
+                    Copyright © <span id="copy-right-year">{{ date('Y')  }}</span>
                     All rights reserved.
                 </p>
             </div>

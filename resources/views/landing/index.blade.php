@@ -286,76 +286,22 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4">
-                        <div class="our-work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/Award Sadikun BBM.jpeg');"></div>
-                            <div class="our-work-content">
-                                <div class="our-work-name">
-                                    <h4 class="h4-title">
-                                        <a title="Electronic Material">The Best Sales</a>
-                                    </h4>
-                                    <span class="work-category">2024</span>
+                    @foreach($medias as $media)
+                        <div class="col-lg-4">
+                            <div class="our-work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
+                                <div class="back-img"
+                                     style="background-image: url('{{asset('storage/' . $media->path)}}');"></div>
+                                <div class="our-work-content">
+                                    <div class="our-work-name">
+                                        <h4 class="h4-title">
+                                            <a title="Electronic Material">{{ explode("-",$media->caption)[0] }}</a>
+                                        </h4>
+                                        <span class="work-category">{{ count(explode("-",$media->caption)) > 1 ? explode("-",$media->caption)[1] : ''}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="our-work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/Award Sadikun BBM-3.jpeg');"></div>
-                            <div class="our-work-content">
-                                <div class="our-work-name">
-                                    <h4 class="h4-title">
-                                        <a title="Electronic Material">Good Contribution Agen BBM Lintas Region</a>
-                                    </h4>
-                                    <span class="work-category">2022</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="our-work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/Award Sadikun BBM-5.jpeg');"></div>
-                            <div class="our-work-content">
-                                <div class="our-work-name">
-                                    <h4 class="h4-title">
-                                        <a title="Electronic Material">Best Pefomance</a>
-                                    </h4>
-                                    <span class="work-category">2018</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="our-work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/Award Sadikun BBM-4.jpeg');"></div>
-                            <div class="our-work-content">
-                                <div class="our-work-name">
-                                    <h4 class="h4-title">
-                                        <a title="Electronic Material">Best Perfomance Agent</a>
-                                    </h4>
-                                    <span class="work-category">2016</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="our-work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-                            <div class="back-img"
-                                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/Award Sadikun BBM-2.jpeg');"></div>
-                            <div class="our-work-content">
-                                <div class="our-work-name">
-                                    <h4 class="h4-title">
-                                        <a title="Electronic Material">Best Volume</a>
-                                    </h4>
-                                    <span class="work-category">2012</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

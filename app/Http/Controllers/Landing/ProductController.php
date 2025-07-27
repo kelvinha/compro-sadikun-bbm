@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Landing;
 use App\Helpers\PageHelper;
 use App\Helpers\ProductHelper;
 use App\Http\Controllers\Controller;
+use App\Models\Media;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ProductController extends Controller
 {
@@ -77,7 +79,15 @@ class ProductController extends Controller
 
         // Get featured products
         $featuredProducts = ProductHelper::getFeatured(3);
-        return view('landing.product', compact('productsPage', 'products', 'featuredProducts', 'categories', 'category', 'sort'));
+
+        // Get Gallery
+        $medias = Cache::remember('product_categories_all', 60 * 10, function () {
+            return Media::where('disk', 'public')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        });
+
+        return view('landing.product', compact('productsPage', 'products', 'featuredProducts', 'categories', 'category', 'sort','medias'));
     }
 
     /**

@@ -10,12 +10,14 @@ use App\Helpers\SettingsHelper;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Client;
+use App\Models\Media;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Testimonial;
 use App\Models\Submenu;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
@@ -56,7 +58,11 @@ class HomeController extends Controller
             ->orderBy('order', 'asc')
             ->get();
 
-        return view('landing.index', compact('featuredBlogs', 'featuredProjects', 'featuredProducts','testimonials','banners','clients'));
+        $medias = Media::where('disk', 'public')->where('category', 'home')
+            ->orderBy('created_at', 'asc')
+            ->get();
+
+        return view('landing.index', compact('featuredBlogs', 'featuredProjects', 'featuredProducts','testimonials','banners','clients','medias'));
     }
 
     /**

@@ -99,29 +99,19 @@
                                          height="18" alt="Setting Icon">
                                     Gallery
                                 </span>
-                                <h2 class="h2-title m-0">Explore Our Work</h2>
+                                <h2 class="h2-title m-0">Our Journey</h2>
                             </div>
-{{--                            <div class="more-work">--}}
-{{--                                <a href="portfolio.html" class="sec-btn wow fadeInUp" data-wow-duration=".8s"--}}
-{{--                                   data-wow-delay=".2s" title="Discover More">Discover More</a>--}}
-{{--                            </div>--}}
                             <div class="our-work-slider-wp wow fadeInUp marquee-container" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <div class="marquee-track">
-                                    @php
-                                        $images = [
-                                            'gallery-1.jpg',
-                                            'gallery-2.jpg',
-                                            'gallery-3.jpg',
-                                            'gallery-4.jpg',
-                                            'gallery-5.jpg',
-                                            'gallery-6.jpg',
-                                        ];
-                                    @endphp
-
-                                    @foreach(array_merge($images, $images) as $img)
+                                    @foreach($medias as $media)
                                         <div class="marquee-slide"
-                                             style="background-image: url('{{ asset("vendor/landing/assets/images/$img") }}');">
+                                             style="background-image: url('{{ asset("storage/" . $media->path) }}');">
                                         </div>
+                                    @endforeach
+                                    @foreach($medias as $media)
+                                          <div class="marquee-slide"
+                                              style="background-image: url('{{ asset("storage/" . $media->path) }}');">
+                                          </div>
                                     @endforeach
                                 </div>
                             </div>

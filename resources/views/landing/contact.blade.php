@@ -40,7 +40,7 @@
                                  data-wow-delay=".2s">
                                 <ul>
                                     <li>
-                                        <a href="index.html" title="Home">Home</a>
+                                        <a href="{{route('home.index')}}" title="Home">Home</a>
                                     </li>
                                     <li>
                                         <span>Contact Us</span>
@@ -95,7 +95,7 @@
                                     <div class="col-3">
                                         <ul>
                                             <li>
-                                                <a href="https://maps.app.goo.gl/LmWVkPgA84hJv5PeA" title="bandung"
+                                                <a href="https://maps.app.goo.gl/16NRTbMvMjoNXEx77" title="bandung"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
@@ -103,7 +103,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://maps.app.goo.gl/MkWgVEyir24yANEh8" title="cikupa"
+                                                <a href="https://maps.app.goo.gl/1vShC63zFtGXNkqr5\" title="cikupa"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
@@ -111,7 +111,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href=https://maps.app.goo.gl/UCaVaTVVNVVhdeRK6" title="cilegon"
+                                                <a href=https://maps.app.goo.gl/4xR98iPykpuczMPb6" title="cilegon"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
@@ -123,7 +123,7 @@
                                     <div class="col-3">
                                         <ul>
                                             <li>
-                                                <a href="https://maps.app.goo.gl/xyzWz2SWEa81EEAL9" title="denpasar"
+                                                <a href="https://maps.app.goo.gl/sZofBxRRVCP9GehX7" title="denpasar"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
@@ -139,7 +139,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://maps.app.goo.gl/gbBFTSXaBgW78hPe8" title="Surabaya"
+                                                <a href="https://maps.app.goo.gl/2HxE2hRsJbJt8xYz8" title="Surabaya"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
@@ -151,7 +151,7 @@
                                     <div class="col-3">
                                         <ul>
                                             <li>
-                                                <a href="https://maps.app.goo.gl/YAm9QEygKP1avYzy7" title="Tambun"
+                                                <a href="https://maps.app.goo.gl/VP2dVn5u8QxTsLoD7" title="Tambun"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
@@ -159,7 +159,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="https://maps.app.goo.gl/ZeTgFwAnFnLFFBt8A" title="Walang"
+                                                <a href="https://maps.app.goo.gl/WhQioueD5XfAoGUJ7" title="Walang"
                                                    target="_blank">
                                                     <img src="{{asset('vendor/landing')}}/assets/images/map-pin-transparent.svg"
                                                          width="15" height="20" alt="Map Icon">
