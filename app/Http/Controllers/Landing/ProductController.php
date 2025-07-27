@@ -82,6 +82,7 @@ class ProductController extends Controller
 
         // Get Gallery
         $medias = Media::where('disk', 'public')
+            ->where('category', 'general')
             ->orderBy('created_at', 'desc')
             ->get();
 
