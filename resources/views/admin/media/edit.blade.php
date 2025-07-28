@@ -69,7 +69,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="text-muted">Uploaded</th>
-                                                    <td>{{ $media->created_at->format('M d, Y') }}</td>
+                                                    <td>{{ $media->created_at }}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -85,7 +85,7 @@
                                     <h5 class="mb-0">Media Details</h5>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('admin.media.update', $media) }}" method="POST">
+                                    <form action="{{ route('admin.media.update', $media->id) }}" method="POST">
                                         @csrf
                                         @method('PUT')
 
@@ -167,19 +167,19 @@
                                                     <i class="ti ti-device-floppy me-1"></i> Update Media
                                                 </button>
                                                 <a href="{{ route('admin.media.index') }}"
-                                                    class="btn btn-light ms-2">Cancel</a>
+                                                    class="btn btn-warning ms-2">Cancel</a>
                                             </div>
-
-                                            <form action="{{ route('admin.media.destroy', $media) }}" method="POST"
-                                                class="d-inline"
-                                                onsubmit="return confirm('Are you sure you want to delete this media? This action cannot be undone.');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">
-                                                    <i class="ti ti-trash me-1"></i> Delete Media
-                                                </button>
-                                            </form>
                                         </div>
+                                    </form>
+
+                                    <form action="{{ route('admin.media.destroy', $media) }}" method="POST" class="mt-3"
+                                        onsubmit="return confirm('Are you sure you want to delete this media? This action cannot be undone.');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="ti ti-trash me-1"></i> Delete Media
+                                        </button>
+                                    </form>
                                     </form>
                                 </div>
                             </div>

@@ -228,46 +228,46 @@
                                     <div class="row mt-4">
                                         <div class="col-md-6 mb-3">
                                             <div class="form-group">
-                                                <label for="facebook_url">Facebook URL</label>
-                                                <input type="url" class="form-control" id="facebook_url"
-                                                    name="settings[facebook_url]"
-                                                    value="{{ $settings->where('key', 'facebook_url')->first()?->value }}">
+                                                <label for="social_facebook">Facebook URL</label>
+                                                <input type="url" class="form-control" id="social_facebook"
+                                                    name="settings[social_facebook]"
+                                                    value="{{ $settings->where('key', 'social_facebook')->first()?->value }}">
                                                 <small class="form-text text-muted">Your Facebook page URL</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="form-group">
-                                                <label for="twitter_url">Twitter URL</label>
-                                                <input type="url" class="form-control" id="twitter_url"
-                                                    name="settings[twitter_url]"
-                                                    value="{{ $settings->where('key', 'twitter_url')->first()?->value }}">
+                                                <label for="social_twitter">Twitter URL</label>
+                                                <input type="url" class="form-control" id="social_twitter"
+                                                    name="settings[social_twitter]"
+                                                    value="{{ $settings->where('key', 'social_twitter')->first()?->value }}">
                                                 <small class="form-text text-muted">Your Twitter profile URL</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="form-group">
-                                                <label for="instagram_url">Instagram URL</label>
-                                                <input type="url" class="form-control" id="instagram_url"
-                                                    name="settings[instagram_url]"
-                                                    value="{{ $settings->where('key', 'instagram_url')->first()?->value }}">
+                                                <label for="social_instagram">Instagram URL</label>
+                                                <input type="url" class="form-control" id="social_instagram"
+                                                    name="settings[social_instagram]"
+                                                    value="{{ $settings->where('key', 'social_instagram')->first()?->value }}">
                                                 <small class="form-text text-muted">Your Instagram profile URL</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="form-group">
-                                                <label for="linkedin_url">LinkedIn URL</label>
-                                                <input type="url" class="form-control" id="linkedin_url"
-                                                    name="settings[linkedin_url]"
-                                                    value="{{ $settings->where('key', 'linkedin_url')->first()?->value }}">
+                                                <label for="social_linkedin">LinkedIn URL</label>
+                                                <input type="url" class="form-control" id="social_linkedin"
+                                                    name="settings[social_linkedin]"
+                                                    value="{{ $settings->where('key', 'social_linkedin')->first()?->value }}">
                                                 <small class="form-text text-muted">Your LinkedIn profile URL</small>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="form-group">
-                                                <label for="youtube_url">YouTube URL</label>
-                                                <input type="url" class="form-control" id="youtube_url"
-                                                    name="settings[youtube_url]"
-                                                    value="{{ $settings->where('key', 'youtube_url')->first()?->value }}">
+                                                <label for="social_youtube">YouTube URL</label>
+                                                <input type="url" class="form-control" id="social_youtube"
+                                                    name="settings[social_youtube]"
+                                                    value="{{ $settings->where('key', 'social_youtube')->first()?->value }}">
                                                 <small class="form-text text-muted">Your YouTube channel URL</small>
                                             </div>
                                         </div>
@@ -445,28 +445,6 @@
                                                 </div>
                                                 <small class="form-text text-muted">Configure available languages for
                                                     the website</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Social Media Settings -->
-                                <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
-                                    <div class="row mt-4">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="facebook_url">Facebook URL</label>
-                                                <input type="url" class="form-control" id="facebook_url"
-                                                    name="settings[facebook_url]"
-                                                    value="{{ $settings->where('key', 'facebook_url')->first()?->value }}">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="instagram_url">Instagram URL</label>
-                                                <input type="url" class="form-control" id="instagram_url"
-                                                    name="settings[instagram_url]"
-                                                    value="{{ $settings->where('key', 'instagram_url')->first()?->value }}">
                                             </div>
                                         </div>
                                     </div>

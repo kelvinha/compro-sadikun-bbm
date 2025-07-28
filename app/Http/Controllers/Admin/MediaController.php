@@ -97,8 +97,8 @@ class MediaController extends BaseController
      * @param  \App\Models\Media  $media
      * @return \Illuminate\View\View
      */
-    public function show(Media $media)
-    {
+    public function show(Media $medium) {
+        $media = Media::findOrFail($medium->id);
         return view('admin.media.show', compact('media'));
     }
 
@@ -108,9 +108,11 @@ class MediaController extends BaseController
      * @param  \App\Models\Media  $media
      * @return \Illuminate\View\View
      */
-    public function edit(Media $media)
+    public function edit(Media $medium)
     {
         $categories = Media::getCategories();
+        $media = Media::findOrFail($medium->id);
+
         return view('admin.media.edit', compact('media', 'categories'));
     }
 
@@ -121,7 +123,7 @@ class MediaController extends BaseController
      * @param  \App\Models\Media  $media
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Media $media)
+    public function update(Request $request, Media $medium)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -130,11 +132,11 @@ class MediaController extends BaseController
             'category' => 'nullable|string|in:' . implode(',', array_keys(Media::getCategories())),
         ]);
 
-        $media->name = $request->name;
-        $media->alt_text = $request->alt_text;
-        $media->caption = $request->caption;
-        $media->category = $request->category;
-        $media->save();
+        $medium->name = $request->name;
+        $medium->alt_text = $request->alt_text;
+        $medium->caption = $request->caption;
+        $medium->category = $request->category;
+        $medium->save();
 
         $this->success('Media updated successfully');
 
@@ -147,13 +149,13 @@ class MediaController extends BaseController
      * @param  \App\Models\Media  $media
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Media $media)
+    public function destroy(Media $medium)
     {
         // Delete the file
-        Storage::delete('public/' . $media->path);
+        Storage::delete('public/' . $medium->path);
 
         // Delete the record
-        $media->delete();
+        $medium->delete();
 
         $this->success('Media deleted successfully');
 

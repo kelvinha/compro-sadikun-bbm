@@ -98,7 +98,6 @@ class WebsiteSettingController extends Controller
     {
         // Get the current language from the request
         $language = $request->get('lang', app()->getLocale());
-
         // Handle multilingual setting first
         $multilingualEnabled = $request->has('multilingual_enabled') ? '1' : '0';
         WebsiteSetting::updateOrCreate(
