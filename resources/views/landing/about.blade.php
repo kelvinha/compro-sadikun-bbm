@@ -126,7 +126,7 @@
                         <div class="work-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                             <span>01</span>
                             <h4 class="h4-title">Analisis Kebutuhan Energi Industri</h4>
-                            <p>Kami memahami kebutuhan akan distribusi energi BBM yang handal dan terpercaya di
+                            <p>Kami memahami kebutuhan akan distribusi energi BBM yang andal dan terpercaya di
                                 Indonesia.</p>
                         </div>
                     </div>
