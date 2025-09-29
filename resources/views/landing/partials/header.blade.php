@@ -75,20 +75,43 @@
                             <div class="header-mobile-menu">
                                 <ul class="main-menu">
                                     @php
-                                        // Load main menu directly in the header
                                         $mainMenu = \App\Helpers\MenuHelper::getMainMenu();
-                                        $currentPath = "/". Request::path();
+
+                                        $norm = fn ($u) => '/' . ltrim(trim(parse_url($u ?? '/', PHP_URL_PATH) ?? '/', '/'), '/');
+
+                                        $isActive = function ($url) use ($norm) {
+                                            $p = ltrim($norm($url), '/');
+                                            return request()->is($p) || request()->is($p.'/*');
+                                        };
                                     @endphp
 
-                                    @if($mainMenu && $mainMenu->submenus && $mainMenu->submenus->count() > 0)
+                                    @if($mainMenu && $mainMenu->submenus?->count())
                                         @foreach($mainMenu->submenus as $submenu)
-                                            <li class="{{ $currentPath === $submenu->url || Request::path() === $submenu->url ? 'active-menu' : '' }}">
-                                                <a href="{{ $submenu->url }}"
-                                                   title="{{ $submenu->name }}">{{ $submenu->name }}</a>
-                                            </li>
+                                            @php
+                                                $hasChildren = $submenu->children?->count() > 0;
+                                                $activeTop   = $isActive($submenu->url) || ($hasChildren && $submenu->children->contains(fn($c) => $isActive($c->url)));
+                                            @endphp
+
+                                            @if($hasChildren)
+                                                <li class="{{ $hasChildren ? 'menu-parent' : '' }} {{ $activeTop ? 'active-menu' : '' }}">
+                                                    <a href="javascript:void(0)" title="{{ $submenu->name }}">{{ $submenu->name }}</a>
+                                                    <ul class="sub-menu">
+                                                        @foreach($submenu->children as $child)
+                                                            <li class="{{ $isActive($child->url) ? 'active-sub-menu' : '' }}">
+                                                                <a href="{{ $norm($child->url) }}" title="{{ $child->name }}">{{ $child->name }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @else
+                                                <li>
+                                                    <a href="{{ $norm($submenu->url) }}" title="{{ $submenu->name }}">{{ $submenu->name }}</a>
+                                                </li>
+                                            @endif
                                         @endforeach
                                     @endif
                                 </ul>
+
                                 <div class="header-cta">
                                     <div class="header-search-button">
                                         <button type="button" data-bs-toggle="modal" data-bs-target="#searchModal">

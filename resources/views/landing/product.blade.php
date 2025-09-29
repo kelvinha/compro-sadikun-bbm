@@ -72,7 +72,7 @@
 
                                     <div style="height: 130px;">
                                         <h4 class="h4-title">
-                                            <a href="{{ route('home.products.show', $product->slug) }}" target="_blank"
+                                            <a href="{{ route('home.services.products.show', $product->slug) }}" target="_blank"
                                                title="{{ $title }}">
                                                 {{ Str::limit($title, $maxLength, strlen($title) > $maxLength ? '...' : '') }}
                                             </a>
@@ -267,7 +267,7 @@
                                     </div>
                                     <div class="faq-accordian-content">
                                         <p>Kami menawarkan berbagai jenis produk BBM <a
-                                                href="{{ route('home.products') }}">lihat disini</a></p>
+                                                href="{{ route('home.services.products') }}">lihat disini</a></p>
                                     </div>
                                 </div>
                                 <div class="faq-accordian-box">

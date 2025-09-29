@@ -26,10 +26,15 @@ Route::middleware(['web.tracking', 'web.locale'])->group(function () {
     Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('home.projects.show');
 
     // Product routes
-    Route::get('/products', [ProductController::class, 'index'])->name('home.products');
-    Route::get('/products/category/{slug}', [ProductController::class, 'category'])->name('home.products.category');
-    Route::get('/products/{slug}', [ProductController::class, 'show'])->name('home.products.show');
-    Route::get('/products/file/{slug}', [ProductController::class, 'file'])->name('home.products.file');
+    Route::group([
+        'prefix' => 'services',
+        'as' => 'home.services.',
+    ], function () {
+        Route::get('/products', [ProductController::class, 'index'])->name('products');
+        Route::get('/products/category/{slug}', [ProductController::class, 'category'])->name('products.category');
+        Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
+        Route::get('/products/file/{slug}', [ProductController::class, 'file'])->name('products.file');
+    });
 
     // Contact routes
     Route::get('/contact', [ContactController::class, 'index'])->name('home.contact');
