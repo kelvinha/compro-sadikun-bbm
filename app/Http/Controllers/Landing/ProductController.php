@@ -46,7 +46,7 @@ class ProductController extends Controller
         $sort = $request->input('sort', 'default');
 
         // Get active products
-        $query = Product::where('status', 'active');
+        $query = Product::where('status', 'active')->where('category_id', 8);
 
         // Apply category filter
         if ($category) {

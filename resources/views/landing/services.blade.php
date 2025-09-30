@@ -1,15 +1,15 @@
 @extends('landing.layout.master')
 
-@section('title', $productsPage->seo->title ?? 'Our Products')
-@section('meta_description', $productsPage->seo->description ?? 'Explore our range of high-quality products')
-@section('meta_keywords', $productsPage->seo->keywords ?? 'products, valve automation, control systems')
+@section('title', $productsPage->seo->title ?? 'Our Services')
+@section('meta_description', $productsPage->seo->description ??  'Explore our professional services including high-quality industrial products and trusted transportir solutions. From valve automation to control systems, we deliver efficiency and reliability for your business operations.')
+@section('meta_keywords', $productsPage->seo->keywords ?? 'services, industrial products, transportir, valve automation, control systems, fuel distribution, liquid transport, industrial solutions')
 
 @section('classBody', 'services_listing_page')
 @section('content')
     <main class="site-main">
         <!-- START OF BANNER -->
         <section class="inner-banner back-img"
-                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner-our-product.png');">
+                 style="background-image: url('{{asset('vendor/landing')}}/assets/images/banner-our-services.jpg');">
             <div class="banner-stripes">
                 <span></span>
                 <span></span>
@@ -52,15 +52,15 @@
                     <div class="col-lg-6 col-xxl-6 col-sm-6">
                             <div class="services-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <div class="services-image">
-                                        <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
+                                        <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/section-products.png');"></div>
                                 </div>
                                 <div class="services-box-icon">
                                     <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg" width="38" height="38" alt="All Maintenance Icon">
                                 </div>
                                 <div class="services-box-content">
-                                    <div style="height: 130px;">
+                                    <div style="height: 90px;">
                                         <h4 class="h4-title">
-                                            <a href="#" target="_blank" title="Test">
+                                            <a href="{{ route('home.services.products') }}" target="_blank" title="Test">
                                                 Products
                                             </a>
                                         </h4>
@@ -71,15 +71,15 @@
                     <div class="col-lg-6 col-xxl-6 col-sm-6">
                         <div class="services-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                             <div class="services-image">
-                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
+                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/section-transportir.png');"></div>
                             </div>
                             <div class="services-box-icon">
                                 <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg" width="38" height="38" alt="All Maintenance Icon">
                             </div>
                             <div class="services-box-content">
-                                <div style="height: 130px;">
+                                <div style="height: 90px;">
                                     <h4 class="h4-title">
-                                        <a href="#" target="_blank" title="Test">
+                                        <a href="{{ route('home.services.transportir') }}" target="_blank" title="Test">
                                             Transportir
                                         </a>
                                     </h4>
@@ -118,51 +118,6 @@
                                     @endforeach
                                 </div>
                             </div>
-                            {{--                            <div class="our-work-slider-wp wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
-                            {{--                                <div class="swiper our-work-slider">--}}
-                            {{--                                    <div class="swiper-wrapper">--}}
-                            {{--                                        <div class="swiper-slide">--}}
-                            {{--                                            <div class="our-work-box">--}}
-                            {{--                                                <div class="back-img"--}}
-                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-1.jpg');"></div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="swiper-slide">--}}
-                            {{--                                            <div class="our-work-box">--}}
-                            {{--                                                <div class="back-img"--}}
-                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-2.jpg');"></div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="swiper-slide">--}}
-                            {{--                                            <div class="our-work-box">--}}
-                            {{--                                                <div class="back-img"--}}
-                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-3.jpg');"></div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="swiper-slide">--}}
-                            {{--                                            <div class="our-work-box">--}}
-                            {{--                                                <div class="back-img"--}}
-                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-4.jpg');">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="swiper-slide">--}}
-                            {{--                                            <div class="our-work-box">--}}
-                            {{--                                                <div class="back-img"--}}
-                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-5.jpg');">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="swiper-slide">--}}
-                            {{--                                            <div class="our-work-box">--}}
-                            {{--                                                <div class="back-img"--}}
-                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-6.jpg');">--}}
-                            {{--                                                </div>--}}
-                            {{--                                            </div>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
                         </div>
                     </div>
                 </div>

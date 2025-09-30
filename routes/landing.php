@@ -7,6 +7,7 @@ use App\Http\Controllers\Landing\ProductController;
 use App\Http\Controllers\Landing\ProjectController;
 use App\Http\Controllers\Landing\ContactController;
 use App\Http\Controllers\Landing\ServicesController;
+use App\Http\Controllers\Landing\TransportirController;
 use Illuminate\Support\Facades\Route;
 
 // Landing page routes (with tracking and locale)
@@ -31,11 +32,18 @@ Route::middleware(['web.tracking', 'web.locale'])->group(function () {
         'prefix' => 'services',
         'as' => 'home.services',
     ], function () {
+        // services
         Route::get('/', [ServicesController::class, 'index'])->name('');
+
+        // products
         Route::get('/products', [ProductController::class, 'index'])->name('.products');
         Route::get('/products/category/{slug}', [ProductController::class, 'category'])->name('.products.category');
         Route::get('/products/{slug}', [ProductController::class, 'show'])->name('.products.show');
         Route::get('/products/file/{slug}', [ProductController::class, 'file'])->name('.products.file');
+
+        // transport
+        Route::get('/transportir', [TransportirController::class, 'index'])->name('.transportir');
+        Route::get('/transportir/{slug}', [TransportirController::class, 'show'])->name('.transportir.show');
     });
 
     // Contact routes

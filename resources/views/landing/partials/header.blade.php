@@ -104,7 +104,7 @@
                                                     </ul>
                                                 </li>
                                             @else
-                                                <li>
+                                                <li class="{{ $activeTop ? 'active-menu' : '' }}">
                                                     <a href="{{ $norm($submenu->url) }}" title="{{ $submenu->name }}">{{ $submenu->name }}</a>
                                                 </li>
                                             @endif
