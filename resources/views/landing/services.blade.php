@@ -49,44 +49,47 @@
         <section class="main-services-grid">
             <div class="container">
                 <div class="row">
-                    @foreach($products as $product)
-                        <div class="col-lg-6 col-xxl-3 col-sm-4">
+                    <div class="col-lg-6 col-xxl-6 col-sm-6">
                             <div class="services-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
                                 <div class="services-image">
-                                    @if($product->image)
-                                        <div class="back-img"
-                                             style="background-image: url('{{asset('storage/' . $product->image)}}'); background-size: contain;"></div>
-                                    @else
-                                        <div class="back-img"
-                                             style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
-                                    @endif
+                                        <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
                                 </div>
                                 <div class="services-box-icon">
                                     <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg" width="38" height="38" alt="All Maintenance Icon">
                                 </div>
                                 <div class="services-box-content">
-                                    @php
-                                        $maxLength = 40;
-                                        $title = $product->title;
-                                    @endphp
-
                                     <div style="height: 130px;">
                                         <h4 class="h4-title">
-                                            <a href="{{ route('home.services.products.show', $product->slug) }}" target="_blank"
-                                               title="{{ $title }}">
-                                                {{ Str::limit($title, $maxLength, strlen($title) > $maxLength ? '...' : '') }}
+                                            <a href="#" target="_blank" title="Test">
+                                                Products
                                             </a>
                                         </h4>
                                     </div>
-{{--                                    {!! $product->short_description !!}--}}
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-6 col-xxl-6 col-sm-6">
+                        <div class="services-box wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
+                            <div class="services-image">
+                                <div class="back-img" style="background-image: url('{{asset('vendor/landing')}}/assets/images/service-list-card-1.jpg');"></div>
+                            </div>
+                            <div class="services-box-icon">
+                                <img src="{{asset('vendor/landing')}}/assets/images/all-maintenance-icon.svg" width="38" height="38" alt="All Maintenance Icon">
+                            </div>
+                            <div class="services-box-content">
+                                <div style="height: 130px;">
+                                    <h4 class="h4-title">
+                                        <a href="#" target="_blank" title="Test">
+                                            Transportir
+                                        </a>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- END OF SERVICES LISTING -->
         <!-- START OF OUR WORK SECTION -->
         <section class="our-work">
             <div class="container">
@@ -109,57 +112,57 @@
                                         </div>
                                     @endforeach
                                     @foreach($medias as $media)
-                                          <div class="marquee-slide"
-                                              style="background-image: url('{{ asset("storage/" . $media->path) }}');">
-                                          </div>
+                                        <div class="marquee-slide"
+                                             style="background-image: url('{{ asset("storage/" . $media->path) }}');">
+                                        </div>
                                     @endforeach
                                 </div>
                             </div>
-{{--                            <div class="our-work-slider-wp wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
-{{--                                <div class="swiper our-work-slider">--}}
-{{--                                    <div class="swiper-wrapper">--}}
-{{--                                        <div class="swiper-slide">--}}
-{{--                                            <div class="our-work-box">--}}
-{{--                                                <div class="back-img"--}}
-{{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-1.jpg');"></div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="swiper-slide">--}}
-{{--                                            <div class="our-work-box">--}}
-{{--                                                <div class="back-img"--}}
-{{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-2.jpg');"></div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="swiper-slide">--}}
-{{--                                            <div class="our-work-box">--}}
-{{--                                                <div class="back-img"--}}
-{{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-3.jpg');"></div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="swiper-slide">--}}
-{{--                                            <div class="our-work-box">--}}
-{{--                                                <div class="back-img"--}}
-{{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-4.jpg');">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="swiper-slide">--}}
-{{--                                            <div class="our-work-box">--}}
-{{--                                                <div class="back-img"--}}
-{{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-5.jpg');">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="swiper-slide">--}}
-{{--                                            <div class="our-work-box">--}}
-{{--                                                <div class="back-img"--}}
-{{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-6.jpg');">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            {{--                            <div class="our-work-slider-wp wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">--}}
+                            {{--                                <div class="swiper our-work-slider">--}}
+                            {{--                                    <div class="swiper-wrapper">--}}
+                            {{--                                        <div class="swiper-slide">--}}
+                            {{--                                            <div class="our-work-box">--}}
+                            {{--                                                <div class="back-img"--}}
+                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-1.jpg');"></div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                        <div class="swiper-slide">--}}
+                            {{--                                            <div class="our-work-box">--}}
+                            {{--                                                <div class="back-img"--}}
+                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-2.jpg');"></div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                        <div class="swiper-slide">--}}
+                            {{--                                            <div class="our-work-box">--}}
+                            {{--                                                <div class="back-img"--}}
+                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-3.jpg');"></div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                        <div class="swiper-slide">--}}
+                            {{--                                            <div class="our-work-box">--}}
+                            {{--                                                <div class="back-img"--}}
+                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-4.jpg');">--}}
+                            {{--                                                </div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                        <div class="swiper-slide">--}}
+                            {{--                                            <div class="our-work-box">--}}
+                            {{--                                                <div class="back-img"--}}
+                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-5.jpg');">--}}
+                            {{--                                                </div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                        <div class="swiper-slide">--}}
+                            {{--                                            <div class="our-work-box">--}}
+                            {{--                                                <div class="back-img"--}}
+                            {{--                                                     style="background-image: url('{{asset('vendor/landing')}}/assets/images/gallery-6.jpg');">--}}
+                            {{--                                                </div>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                    </div>--}}
+                            {{--                                </div>--}}
+                            {{--                            </div>--}}
                         </div>
                     </div>
                 </div>

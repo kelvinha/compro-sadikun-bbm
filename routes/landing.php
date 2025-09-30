@@ -6,6 +6,7 @@ use App\Http\Controllers\Landing\BlogController;
 use App\Http\Controllers\Landing\ProductController;
 use App\Http\Controllers\Landing\ProjectController;
 use App\Http\Controllers\Landing\ContactController;
+use App\Http\Controllers\Landing\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 // Landing page routes (with tracking and locale)
@@ -28,12 +29,13 @@ Route::middleware(['web.tracking', 'web.locale'])->group(function () {
     // Product routes
     Route::group([
         'prefix' => 'services',
-        'as' => 'home.services.',
+        'as' => 'home.services',
     ], function () {
-        Route::get('/products', [ProductController::class, 'index'])->name('products');
-        Route::get('/products/category/{slug}', [ProductController::class, 'category'])->name('products.category');
-        Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
-        Route::get('/products/file/{slug}', [ProductController::class, 'file'])->name('products.file');
+        Route::get('/', [ServicesController::class, 'index'])->name('');
+        Route::get('/products', [ProductController::class, 'index'])->name('.products');
+        Route::get('/products/category/{slug}', [ProductController::class, 'category'])->name('.products.category');
+        Route::get('/products/{slug}', [ProductController::class, 'show'])->name('.products.show');
+        Route::get('/products/file/{slug}', [ProductController::class, 'file'])->name('.products.file');
     });
 
     // Contact routes

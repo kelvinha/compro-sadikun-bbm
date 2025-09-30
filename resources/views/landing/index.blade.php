@@ -53,7 +53,7 @@
                                             </h1>
                                             <p class="text-lg">{{ $banner->description }}</p>
                                             <div class="banner-btn">
-                                                <a href="{{ route('home.products') }}" class="sec-btn"
+                                                <a href="{{ route('home.services.products') }}" class="sec-btn"
                                                    title="Discover More">Discover
                                                     More</a>
                                             </div>
@@ -342,7 +342,7 @@
                                     </div>
                                     <div class="faq-accordian-content">
                                         <p>Kami menawarkan berbagai jenis produk BBM <a
-                                                href="{{ route('home.products') }}">lihat disini</a></p>
+                                                href="{{ route('home.services.products') }}">lihat disini</a></p>
                                     </div>
                                 </div>
                                 <div class="faq-accordian-box">
