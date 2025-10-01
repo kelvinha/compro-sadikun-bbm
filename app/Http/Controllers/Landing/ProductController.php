@@ -75,7 +75,7 @@ class ProductController extends Controller
                 break;
         }
 
-        $products = $query->paginate(9);
+        $products = $query->get();
 
         // Get featured products
         $featuredProducts = ProductHelper::getFeatured(3);
