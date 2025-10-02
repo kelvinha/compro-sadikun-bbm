@@ -77,7 +77,7 @@ Str::limit(strip_tags($product->description), 160))
                         </div>
                     </div>
                     <div class="mt-5">
-                        <a href="{{ route('home.products.file', "$product->slug")  }}" target="_blank" class="sec-btn"
+                        <a href="{{ route('home.services.products.file', "$product->slug")  }}" target="_blank" class="sec-btn"
                            title="get detail our product">Get detail our products</a>
                     </div>
                 </div>
