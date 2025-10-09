@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -175,12 +176,29 @@ class ProductController extends Controller
         return view('landing.product', compact('productsPage', 'products', 'featuredProducts', 'categories', 'category', 'sort'));
     }
 
-    public function file($slug)
+    public function file(string $slug)
     {
         $product = Product::where('slug', $slug)
             ->where('status', 'active')
             ->firstOrFail();
 
-        return response()->file(public_path('storage/' . $product->product_catalog), ['Content-Type' => 'application/pdf']);
+        $relative = ltrim(preg_replace('#^/?storage/#', '', (string) $product->product_catalog), '/');
+
+        $absolute = storage_path('app/public/' . $relative);
+
+        if (File::exists($absolute)) {
+            return response()->file($absolute, [
+                'Content-Type'  => 'application/pdf',
+                'Cache-Control' => 'public, max-age=31536000',
+            ]);
+        }
+
+        $publicPath = public_path('storage/' . $relative);
+
+        if (File::exists($publicPath)) {
+            return redirect(asset('storage/' . $relative), 302);
+        }
+
+        abort(404, 'File not found.');
     }
 }
