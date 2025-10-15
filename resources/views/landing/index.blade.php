@@ -403,34 +403,85 @@
                     <div class="col-lg-6 order-lg-2 order-1">
                         <div class="in-touch-form wow fadeInRight" data-wow-duration=".8s" data-wow-delay=".2s">
                             <h3 class="h3-title">Get In Touch Now !</h3>
-                            <form>
+
+                            <!-- Display success/error messages -->
+                            @if(session('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+
+                            @if(session('error'))
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{ session('error') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+
+                            @if($errors->any())
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <ul class="mb-0">
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            @endif
+
+                            <form action="{{ route('home.contact.store') }}" method="POST" id="homeContactForm" novalidate>
+                                @csrf
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="form-field">
-                                            <input type="text" class="input-field" placeholder="Full Name" required="">
+                                            <input type="text" name="name" class="input-field" placeholder="Full Name"
+                                                   value="{{ old('name') }}" required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-field">
-                                            <input type="email" class="input-field" placeholder="Email Address"
-                                                   required="">
+                                            <input type="email" name="email" class="input-field" placeholder="Email Address"
+                                                   value="{{ old('email') }}" required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-field">
-                                            <input type="number" class="input-field" placeholder="Phone No."
-                                                   required="">
+                                            <input type="tel" name="phone" class="input-field" placeholder="Phone No."
+                                                   value="{{ old('phone') }}">
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-field">
-                                            <textarea name="message" class="input-field"
-                                                      placeholder="Message..."></textarea>
+                                            <input type="text" name="subject" class="input-field" placeholder="Subject"
+                                                   value="{{ old('subject') }}" required>
+                                            <div class="invalid-feedback"></div>
                                         </div>
                                     </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-field">
+                                            <textarea name="message" class="input-field" placeholder="Message..."
+                                                      required>{{ old('message') }}</textarea>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Simple Math CAPTCHA -->
+                                    <div class="col-lg-12">
+                                        <div class="form-field">
+                                            <input type="number" name="captcha" id="home_captcha" class="input-field"
+                                                   placeholder="Security Question: What is {{ session('captcha_num1', rand(1, 10)) }} + {{ session('captcha_num2', rand(1, 10)) }}?"
+                                                   required>
+                                            <div class="invalid-feedback"></div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-lg-12">
                                         <div class="form-field form-submit-btn">
-                                            <button type="submit" class="sec-btn">Submit now</button>
+                                            <button type="submit" class="sec-btn" id="homeSubmitBtn">Submit now</button>
                                         </div>
                                     </div>
                                 </div>

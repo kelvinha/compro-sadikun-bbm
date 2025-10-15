@@ -54,7 +54,7 @@
                 <div class="col-lg-2">
                     <div class="site-branding">
                         <a href="{{ route('home.index') }}" title="PT Sadikun BBM">
-                            @if($data['website_logo'])
+                            @if(isset($data['website_logo']) && $data['website_logo'])
                                 <img src="{{ asset('storage/' . $data['website_logo']) }}" width="152" height="35"
                                      alt="PT Sadikun Niagamas Raya Logo">
                             @else

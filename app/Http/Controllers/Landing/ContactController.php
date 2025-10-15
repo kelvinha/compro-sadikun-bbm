@@ -19,6 +19,9 @@ class ContactController extends Controller
      */
     public function index()
     {
+        // Generate CAPTCHA numbers for the session
+        $this->generateCaptcha();
+
         // Get contact page from CMS
         $contactPage = PageHelper::getContactPage();
 
@@ -57,12 +60,21 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate CAPTCHA first
+        if (!$this->validateCaptcha($request->captcha)) {
+            return redirect()->back()
+                ->with('error', 'CAPTCHA verification failed. Please try again.')
+                ->withInput();
+        }
+
         // Validate the request
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
             'subject' => 'required|string|max:255',
             'message' => 'required|string',
+            'captcha' => 'required|numeric',
         ]);
 
         try {
@@ -70,6 +82,7 @@ class ContactController extends Controller
             $contactMessage = ContactMessage::create([
                 'name' => $request->name,
                 'email' => $request->email,
+                'phone' => $request->phone,
                 'subject' => $request->subject,
                 'message' => $request->message,
                 'status' => 'pending'
@@ -87,6 +100,9 @@ class ContactController extends Controller
                 }
             }
 
+            // Generate new CAPTCHA for next submission
+            $this->generateCaptcha();
+
             // Flash success message to the session
             return redirect()->route('home.contact')
                 ->with('success', 'Your message has been sent successfully. We will get back to you soon!');
@@ -94,11 +110,38 @@ class ContactController extends Controller
             // Log the error
             \Log::error('Failed to save contact message: ' . $e->getMessage());
 
+            // Generate new CAPTCHA for retry
+            $this->generateCaptcha();
+
             // Flash error message to the session
             return redirect()->route('home.contact')
                 ->with('error', 'An error occurred while sending your message. Please try again later.')
                 ->withInput();
         }
+    }
+
+    /**
+     * Generate CAPTCHA numbers and store in session
+     */
+    private function generateCaptcha()
+    {
+        $num1 = rand(1, 10);
+        $num2 = rand(1, 10);
+
+        session([
+            'captcha_num1' => $num1,
+            'captcha_num2' => $num2,
+            'captcha_answer' => $num1 + $num2
+        ]);
+    }
+
+    /**
+     * Validate CAPTCHA answer
+     */
+    private function validateCaptcha($userAnswer)
+    {
+        $correctAnswer = session('captcha_answer');
+        return $correctAnswer && (int)$userAnswer === (int)$correctAnswer;
     }
 
 

@@ -29,8 +29,8 @@ class AboutController extends Controller
             );
         }
 
-        // Load SEO settings for the about page
-        if ($aboutPage->seo) {
+        // Load SEO settings for the about page (only if it's an Eloquent model)
+        if ($aboutPage instanceof \App\Models\Page && $aboutPage->seo) {
             $aboutPage->load('seo');
         }
 

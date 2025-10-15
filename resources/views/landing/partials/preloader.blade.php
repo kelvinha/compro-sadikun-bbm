@@ -10,7 +10,7 @@
 @endphp
     <!-- START OF LOADER -->
 <div class="loader-box">
-    @if($data['website_logo'])
+    @if(isset($data['website_logo']) && $data['website_logo'])
         <img src="{{asset('storage/' . $data['website_logo'])}}" alt="Loader Main">
     @else
         <div class="loader">

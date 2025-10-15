@@ -74,8 +74,8 @@
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link" href="{{ route('admin.pages.index') }}">Pages</a></li>
-                        <li class="pc-item"><a class="pc-link" href="{{ route('admin.menus.index') }}">Menus</a></li>
-                        <li class="pc-item"><a class="pc-link" href="{{ route('admin.submenus.index') }}">Submenus</a>
+                        {{-- <li class="pc-item"><a class="pc-link" href="{{ route('admin.menus.index') }}">Menus</a></li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('admin.submenus.index') }}">Submenus</a> --}}
                         </li>
                         <li class="pc-item"><a class="pc-link" href="{{ route('admin.teams.index') }}">Team Members</a>
                         </li>
@@ -99,13 +99,13 @@
                         <use xlink:href="#custom-shopping-bag"></use>
                     </svg>
                 </li>
-                <li class="pc-item">
+                {{-- <li class="pc-item">
                     <a href="{{ route('admin.services.index') }}" class="pc-link"><span class="pc-micon"><i
                                 class="ti ti-tool"></i></span><span class="pc-mtext">Services</span></a>
-                </li>
+                </li> --}}
                 <li class="pc-item">
                     <a href="{{ route('admin.products.index') }}" class="pc-link"><span class="pc-micon"><i
-                                class="ti ti-box"></i></span><span class="pc-mtext">Products</span></a>
+                                class="ti ti-box"></i></span><span class="pc-mtext">Services</span></a>
                 </li>
                 <li class="pc-item">
                     <a href="{{ route('admin.product-categories.index') }}" class="pc-link"><span class="pc-micon"><i

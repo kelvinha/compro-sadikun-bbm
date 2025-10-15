@@ -137,8 +137,8 @@ class BlogController extends Controller
             );
         }
 
-        // Load SEO settings for the blog page
-        if ($blogPage->seo) {
+        // Load SEO settings for the blog page (only if it's an Eloquent model)
+        if ($blogPage instanceof \App\Models\Page && $blogPage->seo) {
             $blogPage->load('seo');
         }
 

@@ -47,7 +47,7 @@
                     <div class="footer-left">
                         <div class="footer-branding">
                             <a href="{{ route('home.index') }}" title="PT Sadikun BBM">
-                                @if($data['website_logo'])
+                                @if(isset($data['website_logo']) && $data['website_logo'])
                                     <img src="{{ asset('storage/' . $data['website_logo']) }}" width="152" height="35"
                                          alt="PT Sadikun Niagamas Raya Logo">
                                 @else
@@ -112,6 +112,7 @@
                     <div class="footer-contact">
                         <h4 class="h4-title">Contact Us</h4>
                         <ul>
+                            @if(isset($data['contact_address']) && $data['contact_address'])
                             <li>
                                 <div class="contact-item">
                                         <span class="contact-icon">
@@ -122,6 +123,8 @@
                                     </div>
                                 </div>
                             </li>
+                            @endif
+                            @if(isset($data['contact_email']) && $data['contact_email'])
                             <li>
                                 <div class="contact-item">
                                         <span class="contact-icon">
@@ -133,6 +136,8 @@
                                     </div>
                                 </div>
                             </li>
+                            @endif
+                            @if(isset($data['contact_phone']) && $data['contact_phone'])
                             <li>
                                 <div class="contact-item">
                                         <span class="contact-icon">
@@ -145,6 +150,7 @@
                                     </div>
                                 </div>
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

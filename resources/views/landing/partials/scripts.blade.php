@@ -21,3 +21,5 @@
 <script src="{{asset('vendor/landing')}}/assets/js/wow.min.js"></script>
 <!-- Custom JS Link -->
 <script src="{{asset('vendor/landing')}}/assets/js/custom.js"></script>
+<!-- Contact Form JS -->
+<script src="{{asset('js/contact-form.js')}}"></script>

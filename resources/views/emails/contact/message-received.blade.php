@@ -5,6 +5,7 @@ You have received a new contact message from your website.
 
 **Name:** {{ $message->name }}
 **Email:** {{ $message->email }}
+**Phone:** {{ $message->phone ?? 'Not provided' }}
 **Subject:** {{ $message->subject }}
 
 **Message:**
