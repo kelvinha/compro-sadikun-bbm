@@ -8,18 +8,8 @@ use App\Models\WebsiteSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class WebsiteSettingController extends Controller
+class WebsiteSettingController extends SuperAdminController
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('isAdmin');
-    }
 
     /**
      * Display a listing of the resource.

@@ -29,7 +29,7 @@
                     <div class="row">
                         {!! Form::model($user, [
                             'method' => 'PATCH',
-                            'url' => ['/admin/user', $user->id],
+                            'route' => ['admin.users.update', $user->id],
                             'class' => '','enctype' => 'multipart/form-data']) !!}
 
                             @include ('admin.user.form', ['formMode' => 'edit'])

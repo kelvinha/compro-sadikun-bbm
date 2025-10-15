@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        {!! Form::open(['url' => '/admin/user', 'class' => '', 'enctype' => 'multipart/form-data']) !!}
+                        {!! Form::open(['route' => 'admin.users.store', 'class' => '', 'enctype' => 'multipart/form-data']) !!}
                         @include ('admin.user.form', ['formMode' => 'create'])
                         {!! Form::close() !!}
                     </div>

@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('user.update-password', $user->id) }}" method="POST">
+                <form action="{{ route('admin.users.update-password', $user->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     
@@ -49,7 +49,7 @@
                     
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Change Password</button>
-                        <a href="{{ route('user.show', $user->id) }}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-secondary">Cancel</a>
                     </div>
                 </form>
             </div>

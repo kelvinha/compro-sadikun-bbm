@@ -28,7 +28,7 @@
             <div class="card table-card">
                 <div class="card-body">
                     <div class="text-end p-4 pb-sm-2">
-                        <a href="{{ url('/admin/user' . '/create') }}"
+                        <a href="{{ route('admin.users.create') }}"
                             class="btn btn-primary btn-lg d-inline-flex align-items-center gap-2">
                             <i class="ti ti-plus f-18"></i>
                             Add New
@@ -69,10 +69,10 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="action-buttons d-flex gap-2">
-                                                <a href="{{ url('/admin/user/' . $item->id) }}" class="btn btn-info btn-sm" data-bs-toggle="tooltip" title="View">
+                                                <a href="{{ route('admin.users.show', $item->id) }}" class="btn btn-info btn-sm" data-bs-toggle="tooltip" title="View">
                                                     <i class="ti ti-eye"></i>
                                                 </a>
-                                                <a href="{{ url('/admin/user/' . $item->id . '/edit') }}" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" title="Edit">
+                                                <a href="{{ route('admin.users.edit', $item->id) }}" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" title="Edit">
                                                     <i class="ti ti-edit"></i>
                                                 </a>
                                                 <a href="#" onclick="confirmDelete({{ $item->id }})" class="btn btn-danger btn-sm" data-bs-toggle="tooltip" title="Delete">
@@ -80,7 +80,7 @@
                                                 </a>
                                                 {!! Form::open([
                                                     'method' => 'DELETE',
-                                                    'url' => ['/admin/user', $item->id],
+                                                    'route' => ['admin.users.destroy', $item->id],
                                                     'style' => 'display:none',
                                                     'id' => 'deleteForm' . $item->id,
                                                 ]) !!}

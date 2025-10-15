@@ -255,6 +255,8 @@ Route::middleware(['auth', 'isAdmin'])->prefix('admin')->as('admin.')->group(fun
 Route::middleware(['auth', 'isSuperAdmin'])->prefix('admin')->as('admin.')->group(function () {
     // User Management
     Route::resource('users', UserController::class);
+    Route::get('users/{user}/change-password', [UserController::class, 'changePassword'])->name('users.change-password');
+    Route::put('users/{user}/update-password', [UserController::class, 'updatePassword'])->name('users.update-password');
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
 });

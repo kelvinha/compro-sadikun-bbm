@@ -6,7 +6,7 @@ use App\Helpers\SettingsHelper;
 use App\Models\WebsiteSetting;
 use Illuminate\Http\Request;
 
-class SeoController extends BaseController
+class SeoController extends SuperAdminController
 {
     /**
      * Display a listing of the resource.

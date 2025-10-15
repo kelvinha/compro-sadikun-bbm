@@ -57,11 +57,11 @@
                             </tbody>
                         </table>
                         <div class="mt-3">
-                            <a href="{{ url('/admin/user') }}" class="btn btn-secondary btn-sm"><i class="ti ti-arrow-left"
+                            <a href="{{ route('admin.users.index') }}" class="btn btn-secondary btn-sm"><i class="ti ti-arrow-left"
                                     aria-hidden="true"></i> Back</a>
-                            <a href="{{ route('user.change-password', $user->id) }}" class="btn btn-primary btn-sm"><i
+                            <a href="{{ route('admin.users.change-password', $user->id) }}" class="btn btn-primary btn-sm"><i
                                     class="ti ti-lock" aria-hidden="true"></i> Change Password</a>
-                            <a href="{{ route('user.edit', $user->id) }}" class="btn btn-info btn-sm"><i
+                            <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-info btn-sm"><i
                                     class="ti ti-pencil" aria-hidden="true"></i> Edit</a>
                         </div>
                     </div>

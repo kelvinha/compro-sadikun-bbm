@@ -126,12 +126,13 @@
                     <a href="{{ route('admin.contact-messages.index') }}" class="pc-link"><span class="pc-micon"><i
                                 class="ti ti-mail"></i></span><span class="pc-mtext">Contact Messages</span></a>
                 </li>
-                <li class="pc-item">
+                {{-- <li class="pc-item">
                     <a href="{{ route('admin.newsletter-subscribers.index') }}" class="pc-link"><span
                             class="pc-micon"><i class="ti ti-mail-forward"></i></span><span class="pc-mtext">Newsletter
                             Subscribers</span></a>
-                </li>
+                </li> --}}
 
+                @if (auth()->user()->isSuperAdmin())
                 <li class="pc-item pc-caption">
                     <label>Settings</label>
                     <svg class="pc-icon">
@@ -146,6 +147,7 @@
                     <a href="{{ url('/admin/seo') }}" class="pc-link"><span class="pc-micon"><i
                                 class="ti ti-search"></i></span><span class="pc-mtext">SEO Settings</span></a>
                 </li>
+                @endif
 
                 @if (auth()->user()->isSuperAdmin())
                 <li class="pc-item pc-caption">

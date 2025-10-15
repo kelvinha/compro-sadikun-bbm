@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Str;
 
-class UserController extends BaseController
+class UserController extends SuperAdminController
 {
     /**
      * Display a listing of the resource.
@@ -74,7 +74,7 @@ class UserController extends BaseController
         $user->save();
         $this->success('User created successfully!');
 
-        return redirect('admin/user');
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -151,7 +151,7 @@ class UserController extends BaseController
         $user->save();
         $this->success('User updated successfully!');
 
-        return redirect('admin/user');
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -166,7 +166,7 @@ class UserController extends BaseController
         $this->success('User deleted successfully!');
         User::destroy($id);
 
-        return redirect('admin/user');
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -201,6 +201,6 @@ class UserController extends BaseController
 
         $this->success('Password changed successfully');
 
-        return redirect()->route('user.show', $id);
+        return redirect()->route('admin.users.show', $id);
     }
 }
