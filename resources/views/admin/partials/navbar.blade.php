@@ -111,10 +111,10 @@
                     <a href="{{ route('admin.product-categories.index') }}" class="pc-link"><span class="pc-micon"><i
                                 class="ti ti-list"></i></span><span class="pc-mtext">Product Categories</span></a>
                 </li>
-                <li class="pc-item">
-                    <a href="{{ route('admin.projects.index') }}" class="pc-link"><span class="pc-micon"><i
-                                class="ti ti-building"></i></span><span class="pc-mtext">Projects</span></a>
-                </li>
+{{--                <li class="pc-item">--}}
+{{--                    <a href="{{ route('admin.projects.index') }}" class="pc-link"><span class="pc-micon"><i--}}
+{{--                                class="ti ti-building"></i></span><span class="pc-mtext">Projects</span></a>--}}
+{{--                </li>--}}
 
                 <li class="pc-item pc-caption">
                     <label>Communication</label>
