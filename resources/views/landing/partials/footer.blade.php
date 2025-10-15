@@ -32,6 +32,9 @@
             case 'contact_address':
                 $data['contact_address'] = $setting->value;
                 break;
+            case 'footer_text':
+                $data['footer_text'] = $setting->value;
+                break;
         }
     }
 @endphp
@@ -55,7 +58,7 @@
                                          alt="PT Sadikun Niagamas Raya Logo">
                                 @endif
                             </a>
-                            <p>Empowering Indonesia with reliable, innovative, and heartfelt energy solutions</p>
+                            <p>{{$data['footer_text']}}</p>
                         </div>
                         <div class="footer-socials">
                             <ul>
